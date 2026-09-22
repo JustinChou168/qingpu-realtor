@@ -165,19 +165,6 @@
     border:1px solid var(--line);border-radius:999px;padding:8px 16px;
   }
 
-  /* 建設與發展 */
-  .dev-grid{display:grid;grid-template-columns:1fr;gap:28px;}
-  @media (min-width:760px){.dev-grid{grid-template-columns:1fr 1fr;}}
-  .dev-col-title{display:flex;align-items:center;gap:8px;font-size:1rem;font-weight:800;color:var(--navy);margin:0 0 16px;}
-  .dev-dot{width:10px;height:10px;border-radius:50%;flex:none;}
-  .dev-dot.live{background:var(--navy);}
-  .dev-dot.upcoming{background:var(--orange);}
-  .dev-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px;}
-  .dev-list li{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--bg);border:1px solid var(--line);border-radius:12px;}
-  .dev-list li strong{font-size:.92rem;color:var(--ink);}
-  .dev-list li span{font-size:.82rem;color:var(--ink-soft);line-height:1.7;}
-  .dev-note{margin-top:26px;text-align:center;font-size:.78rem;color:var(--ink-soft);}
-
   /* why grid */
   .grid4{display:grid;grid-template-columns:1fr;gap:18px;}
   @media (min-width:640px){.grid4{grid-template-columns:1fr 1fr;}}
@@ -342,7 +329,6 @@
     <div class="brand"><span class="mark">賈</span>青埔房仲小賈</div>
     <nav class="links">
       <a href="#area">服務區域</a>
-      <a href="#development">建設發展</a>
       <a href="#why">為什麼找我</a>
       <a href="#services">服務項目</a>
       <a href="#articles">房產知識</a>
@@ -401,38 +387,6 @@
       <span class="area-tag">青埔特定區</span>
       <span class="area-tag">大桃園地區</span>
     </div>
-  </div>
-</section>
-
-<section id="development">
-  <div class="wrap">
-    <div class="head">
-      <span class="eyebrow">AREA GROWTH</span>
-      <h2>青埔建設與未來發展</h2>
-      <p>青埔從高鐵特定區起步，這幾年陸續有重大建設完工或動工，整理現況給你參考，實際進度仍以官方最新公告為準。</p>
-    </div>
-    <div class="dev-grid">
-      <div class="dev-col">
-        <h3 class="dev-col-title"><span class="dev-dot live"></span>已經啟用</h3>
-        <ul class="dev-list">
-          <li><strong>高鐵桃園站．機場捷運 A15–A22</strong><span>串聯雙北、桃園、中壢，通勤轉乘骨幹已成形</span></li>
-          <li><strong>華泰名品城 GLORIA OUTLETS</strong><span>2015 年開幕，全台第一座戶外 Outlet 購物村，鄰近高鐵 6 號出口／機捷 A18 站</span></li>
-          <li><strong>Xpark 水生公園</strong><span>都會型水族館，與華泰名品城相連，親子休閒新去處</span></li>
-          <li><strong>青塘園生態公園</strong><span>青埔滯洪生態公園，日常散步、賞景好去處</span></li>
-        </ul>
-      </div>
-      <div class="dev-col">
-        <h3 class="dev-col-title"><span class="dev-dot upcoming"></span>興建中／規劃中</h3>
-        <ul class="dev-list">
-          <li><strong>桃園美術館</strong><span>市立美術館＋兒童美術館，預計 2026 年完工，青埔重要文化地標</span></li>
-          <li><strong>亞洲矽谷中心</strong><span>2025 年轉為民間參與（PPP）模式，2026 年進入實質開發，預計引進 3,000 名以上高階軟體工程師、AI 研究員進駐</span></li>
-          <li><strong>高鐵站前開發案</strong><span>國泰人壽商務複合區，規劃辦公、五星級飯店與高級購物中心機能</span></li>
-          <li><strong>桃園置地廣場</strong><span>全新百貨商場，與華泰名品城以空橋串連</span></li>
-          <li><strong>桃園航空城計畫</strong><span>全台史上規模最大區段徵收案，總面積 4,564 公頃，D1 標工程進度超前，搬遷期程延至 2026 年底</span></li>
-        </ul>
-      </div>
-    </div>
-    <p class="dev-note">以上資訊整理自公開新聞與政府公告（統計至 2026 年 9 月），實際進度可能調整，建議進場前向我確認最新狀況。</p>
   </div>
 </section>
 
@@ -513,14 +467,44 @@
     <div class="head">
       <span class="eyebrow">房市知識</span>
       <h2>青埔、大桃園的房市大小事</h2>
-      <p>文章陸續整理上稿中，想先問問題的話，直接私訊 LINE 更快。</p>
+      <p>整理近期跟青埔有關的建設進度與房市新聞，想先問問題的話，直接私訊 LINE 更快。</p>
     </div>
     <div class="tabs" role="tablist" aria-label="文章分類">
       <button type="button" class="tab-btn" data-cat="all" aria-pressed="true">全部</button>
-      <button type="button" class="tab-btn" data-cat="knowledge" aria-pressed="false">房產知識</button>
       <button type="button" class="tab-btn" data-cat="news" aria-pressed="false">新聞時事</button>
+      <button type="button" class="tab-btn" data-cat="knowledge" aria-pressed="false">房產知識</button>
     </div>
     <div class="grid-articles" id="articleGrid">
+      <div class="article" data-cat="news">
+        <span class="tagline2">新聞時事</span>
+        <h3>亞洲矽谷中心轉 PPP 模式，2026 年進入實質開發</h3>
+        <p>2025 年轉為民間參與（PPP）模式重新定標，2026 年正式進入實質開發階段，預計引進 3,000 名以上高階軟體工程師、AI 研究員進駐，可望帶動周邊置產與租賃需求。</p>
+        <div class="status">資料整理：統計至 2026 年 9 月</div>
+      </div>
+      <div class="article" data-cat="news">
+        <span class="tagline2">新聞時事</span>
+        <h3>桃園美術館預計 2026 年完工，添青埔文化地標</h3>
+        <p>市立美術館與兒童美術館雙館齊發，是青埔近年最受關注的公共建設之一，完工後將成為區域重要的文化與生活機能指標。</p>
+        <div class="status">資料整理：統計至 2026 年 9 月</div>
+      </div>
+      <div class="article" data-cat="news">
+        <span class="tagline2">新聞時事</span>
+        <h3>高鐵站前開發案動工，國泰人壽打造商務複合區</h3>
+        <p>站前土地開發案規劃辦公、五星級飯店與高級購物中心機能，隨進度推進，青埔站前天際線將逐步轉型。</p>
+        <div class="status">資料整理：統計至 2026 年 9 月</div>
+      </div>
+      <div class="article" data-cat="news">
+        <span class="tagline2">新聞時事</span>
+        <h3>桃園置地廣場即將開幕，與華泰名品城空橋串連</h3>
+        <p>全新百貨商場加入青埔商圈，主打百貨、美食街與影城的一站式體驗，購物機能再升級。</p>
+        <div class="status">資料整理：統計至 2026 年 9 月</div>
+      </div>
+      <div class="article" data-cat="news">
+        <span class="tagline2">新聞時事</span>
+        <h3>桃園航空城搬遷期程延至 2026 年底</h3>
+        <p>全台史上規模最大區段徵收案，計畫總面積 4,564 公頃，D1 標工程進度已大幅超前；持續關注航空城後續發展對周邊行情的長期影響。</p>
+        <div class="status">資料整理：統計至 2026 年 9 月</div>
+      </div>
       <div class="article" data-cat="knowledge">
         <span class="tagline2">行情觀察</span>
         <h3>青埔特定區房價現況拆解</h3>
@@ -533,13 +517,14 @@
         <p>從財務階段出發，聊聊房產配置的時機與比重評估。</p>
         <div class="status">撰寫中，敬請期待</div>
       </div>
-      <div class="article" data-cat="news">
+      <div class="article" data-cat="knowledge">
         <span class="tagline2">稅務試算</span>
         <h3>房地合一稅、重購退稅重點整理</h3>
         <p>資格條件與試算重點，買賣前先搞懂再出手。</p>
         <div class="status">撰寫中，敬請期待</div>
       </div>
     </div>
+    <p style="text-align:center;font-size:.78rem;color:var(--ink-soft);margin-top:24px;">新聞時事內容整理自公開新聞與政府公告，實際進度可能調整，建議進場前向我確認最新狀況。</p>
   </div>
 </section>
 
