@@ -232,6 +232,17 @@
     font-size:.78rem;color:var(--ink-soft);display:flex;align-items:center;gap:6px;
   }
   .article .status::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);}
+  .read-more-btn{
+    margin:0 20px 16px;align-self:flex-start;background:none;border:none;cursor:pointer;
+    font-size:.82rem;font-weight:700;color:var(--navy);padding:0;
+  }
+  .article-full{padding:0 20px 16px;display:flex;flex-direction:column;gap:12px;}
+  .article-full h4{font-size:.92rem;font-weight:800;color:var(--navy);margin:6px 0 0;}
+  .article-full p{margin:0;font-size:.86rem;line-height:1.85;color:var(--ink-soft);}
+  .article-full ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;}
+  .article-full li{font-size:.86rem;line-height:1.75;color:var(--ink-soft);}
+  .article-full li strong{color:var(--ink);}
+  .article-disclaimer{font-size:.76rem !important;color:var(--ink-soft);opacity:.85;border-top:1px dashed var(--line);padding-top:10px;}
 
   /* 預約系統 */
   .booking{background:var(--surface-navy);}
@@ -513,8 +524,8 @@
       </div>
       <div class="article" data-cat="news">
         <span class="tagline2">已核可</span>
-        <h3>清華大學桃園醫院落腳 A16 橫山站，目標 2028 年完工</h3>
-        <p>基地約 7.2 公頃，規劃總床數 910 床（分期擴建），已獲衛福部醫審會核可，並將設置 P3 級國家實驗室及疾病疫苗研究中心，強化桃園沿海地區急重症醫療能量。</p>
+        <h3>清華大學桃園醫院委由高醫大興建營運，投資規模達百億元</h3>
+        <p>基地約 7.2 公頃（醫療用地 5 公頃＋教研用地 2.2 公頃），鄰近機捷 A16 橫山站。清大委託高雄醫學大學以 50 年 BOT 模式興建營運，總投資約新台幣 100 億元，聚焦癌症治療與重症醫療，規劃 39 項專科。首期目標 515 床，最終規劃 910 床，朝醫學中心等級發展，預計 2028 年完工啟用。</p>
         <div class="status">資料整理：統計至 2026 年 9 月</div>
       </div>
       <div class="article" data-cat="news">
@@ -527,19 +538,80 @@
         <span class="tagline2">行情觀察</span>
         <h3>青埔特定區房價現況拆解</h3>
         <p>從生活機能到交通動線，拆解青埔生活圈的價格邏輯。</p>
-        <div class="status">撰寫中，敬請期待</div>
+        <button type="button" class="read-more-btn" aria-expanded="false">展開閱讀全文 ▾</button>
+        <div class="article-full" hidden>
+          <p>青埔從高鐵特定區起步，這幾年隨著捷運、產業園區、醫院、美術館等建設陸續到位，房價也走出自己的節奏。</p>
+          <h4>目前行情落在哪裡？</h4>
+          <p>以 2026 年第一季公開資料估算，A17 領航站周邊約 51.7 萬/坪、A18 高鐵站約 54.1 萬/坪、A19 體育園區站約 53.5 萬/坪，是目前市場上較常見的成交區間。指標建案裡的高樓層景觀戶，行情可以挑戰 68～78 萬/坪，部分頂樓景觀戶甚至站上 8 字頭（80 萬以上）。</p>
+          <h4>2024 年打房後，青埔怎麼樣了？</h4>
+          <p>2024 年中央銀行祭出信用管制措施後，不少區域房價出現修正，但青埔沒有明顯下跌，比較像是「量縮價穩」的盤整格局。青埔目前規劃容納約 6 萬人，實際入住人口已達 5 萬人上下，生活機能持續補強而非停滯，這是市場信心的重要支撐。</p>
+          <h4>買在哪裡比較保值？</h4>
+          <p>青埔的價值明顯是「產業驅動型」，不是單純靠交通建設撐盤。實務上可以用亞矽創中心或 A18、A19 站點為圓心，抓步行約 12 分鐘（800～1,000 公尺）內的範圍當作核心區，這個範圍內的物件通常抗跌性較好；超過這個距離，行情支撐力會隨距離遞減，這也是外圍區跟核心區價差的主要原因。</p>
+          <h4>給想進場的你</h4>
+          <p>青埔不是「閉著眼睛買都會漲」的區域，但也不是投機炒作的泡沫區——它比較像是一個還在長大、但骨架已經成形的區域。如果你在意的是自住品質跟長期保值，建議把重大建設的落地時程（不是只看規劃階段）當作判斷依據；想深入聊你考慮的物件，歡迎直接找我。</p>
+          <p class="article-disclaimer">本文行情數據參考 2026 年第一季公開市場資訊整理，實際成交價受個案條件影響，建議看屋議價前再次向我確認最新行情。</p>
+        </div>
+        <div class="status">已發布：統計至 2026 年 9 月</div>
       </div>
       <div class="article" data-cat="knowledge">
         <span class="tagline2">資產配置</span>
         <h3>不動產在資產配置中該佔多少比重？</h3>
         <p>從財務階段出發，聊聊房產配置的時機與比重評估。</p>
-        <div class="status">撰寫中，敬請期待</div>
+        <button type="button" class="read-more-btn" aria-expanded="false">展開閱讀全文 ▾</button>
+        <div class="article-full" hidden>
+          <p>「該不該買房」常常不是對錯題，而是「現在的你，適合把多少資產放進不動產」的比例題。</p>
+          <h4>沒有標準答案，但有判斷邏輯</h4>
+          <p>不動產最大的特性是「低流動性、高單筆金額、長期持有」。跟股票、基金比起來，房子沒辦法今天想賣就賣、明天就拿到現金；但相對地，它也提供了實質居住價值、抗通膨資產，以及長期持有下相對穩定的資產性質。一般建議把不動產（尤其是自住房）視為「生活必需品優先於投資品」，再回頭看剩餘的可投資資產怎麼分配，避免一買房就把存款用盡、甚至槓桿拉到緊繃，導致收入一有異動就失去財務彈性。</p>
+          <h4>幾個影響比重的關鍵因素</h4>
+          <ul>
+            <li><strong>人生階段</strong>：單身、成家、教育金需求、退休前後，每個階段對「該不該現在買房」的答案都不一樣</li>
+            <li><strong>現金流承受度</strong>：房貸月付金占月收入的比重，建議抓在可負擔範圍內，避免壓縮緊急預備金與其他保障需求</li>
+            <li><strong>資產流動性需求</strong>：手上是否還需要保留一筆隨時可動用的現金，因應突發狀況</li>
+            <li><strong>未來換屋／增貸計畫</strong>：現在買的房子，未來有沒有可能透過「重購退稅」等機制換屋，這也會影響現在該怎麼配置</li>
+          </ul>
+          <h4>不是只有「買不買」，還有「怎麼買」</h4>
+          <p>同樣的預算，全額自備款買一間小一點的房子，跟貸款拉高槓桿買一間大一點的房子，兩種配置方式承擔的風險完全不同。建議結合整體財務狀況（收入穩定性、其他負債、保險保障）一起評估，而不是只看「現在的貸款利率划不划算」。</p>
+          <p>每個人的財務起點、風險承受度都不一樣，這篇談的是通則，實際上你的資產配置比重多少才合理，建議把實際狀況攤開來一起算一次。免費行情評估、貸款試算都可以直接找我聊。</p>
+          <p class="article-disclaimer">本文為一般性財務觀念分享，非個人化投資或理財建議，實際配置請依個人財務狀況審慎評估，必要時諮詢專業財務顧問。</p>
+        </div>
+        <div class="status">已發布：統計至 2026 年 9 月</div>
       </div>
       <div class="article" data-cat="knowledge">
         <span class="tagline2">稅務試算</span>
         <h3>房地合一稅、重購退稅重點整理</h3>
         <p>資格條件與試算重點，買賣前先搞懂再出手。</p>
-        <div class="status">撰寫中，敬請期待</div>
+        <button type="button" class="read-more-btn" aria-expanded="false">展開閱讀全文 ▾</button>
+        <div class="article-full" hidden>
+          <p>賣房要繳多少稅，常常是屋主最在意、卻也最容易搞混的問題。這篇整理現行「房地合一稅 2.0」的基本規則，讓你賣房前心裡先有個底。</p>
+          <h4>持有期間，決定基本稅率</h4>
+          <p>房地合一稅以「持有期間」為主要級距，個人交易房地的稅率如下：</p>
+          <ul>
+            <li>持有 2 年以內：45%</li>
+            <li>持有超過 2 年、未逾 5 年：35%</li>
+            <li>持有超過 5 年、未逾 10 年：20%</li>
+            <li>持有超過 10 年：15%</li>
+          </ul>
+          <p>簡單說：持有時間越短，稅率越重；長期持有的房子，稅率會明顯降低。</p>
+          <h4>自住房地，有機會適用優惠稅率</h4>
+          <p>如果賣的是自住房地，符合以下條件，可以適用「400 萬元免稅額＋超過部分 10% 稅率」的優惠，而不是套用上面的持有期間級距：</p>
+          <ul>
+            <li>本人、配偶或未成年子女在該房屋設有戶籍，並「持有＋居住」連續滿 6 年</li>
+            <li>出售前 6 年內，該房屋沒有出租、營業或執行業務使用的紀錄</li>
+            <li>本人、配偶及未成年子女在出售前 6 年內，沒有使用過這項優惠（每 6 年只能用一次）</li>
+          </ul>
+          <p>符合條件的話，課稅所得在 400 萬元以下免稅，超過 400 萬的部分按 10% 稅率課徵，通常比套用持有期間級距划算許多。</p>
+          <h4>換屋族最該搞懂的「重購退稅」</h4>
+          <p>如果你是先賣舊屋、再買新屋（或先買後賣），兩筆交易的「完成移轉登記日」時間差在 2 年以內，就有機會申請重購退稅：</p>
+          <ul>
+            <li>出售的舊屋須符合前述自住房地條件（設籍居住、出售前 1 年內無出租營業使用）</li>
+            <li>退稅金額＝已繳稅額 ×（重購價額 ÷ 出售價額），比率上限 100%——賣小屋買大屋可全額退還或扣抵；賣大屋買小屋則按比率部分退還</li>
+            <li>申請期限：重購房地完成移轉登記次日起 5 年內都可以申請</li>
+          </ul>
+          <p><strong>重要提醒</strong>：重購後的自住房地，5 年內不能改作其他用途（例如出租、營業）或再次移轉，否則國稅局會追繳原本退還或扣抵的稅款。</p>
+          <p>以上是房地合一稅 2.0 目前的現行規定整理，但每個人的持有時間、設籍狀況、過去是否用過優惠都不一樣，實際稅額務必依個案精算，也建議簽約前找會計師或國稅局確認一次。想先抓個大概方向，歡迎跟我聊聊你的物件狀況。</p>
+          <p class="article-disclaimer">本文整理自財政部公開資訊，反映現行法規，惟稅法可能修正，實際申報請以財政部最新公告及個案核定為準，本文不構成正式稅務意見。</p>
+        </div>
+        <div class="status">已發布：統計至 2026 年 9 月</div>
       </div>
     </div>
     <p style="text-align:center;font-size:.78rem;color:var(--ink-soft);margin-top:24px;">新聞時事內容整理自公開新聞與政府公告，實際進度可能調整，建議進場前向我確認最新狀況。</p>
@@ -765,6 +837,19 @@
         articles.forEach(function(a){
           a.hidden = (cat !== 'all' && a.getAttribute('data-cat') !== cat);
         });
+      });
+    });
+  }catch(e){}
+
+  try{
+    var readBtns = document.querySelectorAll('.read-more-btn');
+    readBtns.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var full = btn.nextElementSibling;
+        var expanded = btn.getAttribute('aria-expanded') === 'true';
+        full.hidden = expanded;
+        btn.setAttribute('aria-expanded', String(!expanded));
+        btn.textContent = expanded ? '展開閱讀全文 ▾' : '收合文章 ▴';
       });
     });
   }catch(e){}
