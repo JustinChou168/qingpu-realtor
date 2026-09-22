@@ -271,6 +271,25 @@
   .form-note{font-size:.8rem;color:var(--ink-soft);}
   #formStatus{font-size:.86rem;color:var(--navy-deep);min-height:1.2em;}
 
+  .step{display:flex;gap:14px;padding-block:18px;border-bottom:1px solid var(--line);}
+  .step:first-of-type{padding-top:0;}
+  .step-num{
+    width:26px;height:26px;border-radius:50%;background:var(--navy);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.82rem;flex:none;
+  }
+  .step-body{flex:1;display:flex;flex-direction:column;gap:12px;min-width:0;}
+  .step-body h4{font-size:.95rem;font-weight:800;color:var(--navy);margin:0;}
+  .chip-group{display:flex;flex-wrap:wrap;gap:9px;}
+  .chip{
+    display:flex;align-items:center;gap:6px;font-size:.84rem;color:var(--ink);
+    border:1px solid var(--line);border-radius:999px;padding:8px 14px;cursor:pointer;background:var(--surface);
+  }
+  .chip input{accent-color:var(--navy);margin:0;}
+  #bookingSummary{
+    width:100%;border:1px solid var(--line);border-radius:10px;background:var(--surface);
+    color:var(--ink);padding:11px 13px;font-size:.85rem;font-family:"IBM Plex Mono",monospace;
+  }
+
   footer{padding-block:32px;background:var(--navy);color:#fff;}
   .footer-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;font-size:.82rem;color:#CBDCEF;}
   .footer-row .brand{color:#fff;font-size:.95rem;}
@@ -483,7 +502,7 @@
     <div class="head">
       <span class="eyebrow">BOOKING</span>
       <h2>預約諮詢</h2>
-      <p>不管是想約時間看屋，還是先問幾個問題，留言給我或直接加 LINE 都可以。</p>
+      <p>選個方便的時段，留下需求，我會盡快跟你聯繫。不管是想約時間看屋，還是先問幾個問題，都可以。</p>
     </div>
     <div class="booking-grid">
       <div class="line-cta">
@@ -504,38 +523,95 @@
       </div>
 
       <form class="booking-form" id="bookingForm">
-        <div class="two-col">
-          <div class="field">
-            <label for="b-name">姓名</label>
-            <input id="b-name" name="name" type="text" placeholder="怎麼稱呼您" required>
-          </div>
-          <div class="field">
-            <label for="b-phone">聯絡電話</label>
-            <input id="b-phone" name="phone" type="tel" placeholder="方便聯絡的電話" required>
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h4>選擇時段</h4>
+            <div class="two-col">
+              <div class="field">
+                <label for="b-date">希望預約日期</label>
+                <input id="b-date" name="date" type="date" required>
+              </div>
+              <div class="field">
+                <label for="b-time">希望時段</label>
+                <select id="b-time" name="time">
+                  <option>09:00–10:00</option>
+                  <option>10:00–11:00</option>
+                  <option>11:00–12:00</option>
+                  <option>14:00–15:00</option>
+                  <option>15:00–16:00</option>
+                  <option>16:00–17:00</option>
+                  <option>19:00–20:00</option>
+                  <option>20:00–21:00</option>
+                </select>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="two-col">
-          <div class="field">
-            <label for="b-date">希望預約日期</label>
-            <input id="b-date" name="date" type="date">
-          </div>
-          <div class="field">
-            <label for="b-topic">諮詢項目</label>
-            <select id="b-topic" name="topic">
-              <option value="資產配置">資產配置</option>
-              <option value="稅務諮詢">稅務諮詢</option>
-              <option value="買屋">買屋</option>
-              <option value="賣屋">賣屋</option>
-              <option value="其他">其他</option>
-            </select>
+
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h4>見面方式</h4>
+            <div class="chip-group" id="methodGroup">
+              <label class="chip"><input type="radio" name="method" value="門市面談" checked>門市面談</label>
+              <label class="chip"><input type="radio" name="method" value="現場看屋">現場看屋</label>
+              <label class="chip"><input type="radio" name="method" value="電話諮詢">電話諮詢</label>
+              <label class="chip"><input type="radio" name="method" value="LINE視訊">LINE 視訊</label>
+            </div>
           </div>
         </div>
-        <div class="field">
-          <label for="b-msg">需求說明</label>
-          <textarea id="b-msg" name="message" placeholder="簡單說說您的需求或想問的問題"></textarea>
+
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h4>你的資料</h4>
+            <div class="two-col">
+              <div class="field">
+                <label for="b-name">姓名 *</label>
+                <input id="b-name" name="name" type="text" placeholder="怎麼稱呼您" required>
+              </div>
+              <div class="field">
+                <label for="b-phone">電話 *</label>
+                <input id="b-phone" name="phone" type="tel" placeholder="方便聯絡的電話" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="b-line">LINE ID（選填）</label>
+              <input id="b-line" name="lineid" type="text" placeholder="方便的話留一下 LINE ID">
+            </div>
+          </div>
         </div>
-        <button type="submit" class="btn btn-navy" style="justify-content:center;">送出預約需求</button>
-        <p class="form-note">送出後會開啟郵件軟體代為寄出；若想更快得到回覆，建議直接加 LINE 聯絡。</p>
+
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h4>想找小賈聊什麼？</h4>
+            <div class="chip-group" id="topicGroup">
+              <label class="chip"><input type="checkbox" name="topic" value="資產配置" checked>資產配置</label>
+              <label class="chip"><input type="checkbox" name="topic" value="稅務諮詢">稅務諮詢</label>
+              <label class="chip"><input type="checkbox" name="topic" value="買屋">買屋</label>
+              <label class="chip"><input type="checkbox" name="topic" value="賣屋">賣屋</label>
+              <label class="chip"><input type="checkbox" name="topic" value="其他">其他</label>
+            </div>
+            <div class="field">
+              <label for="b-urgency">大概多急？</label>
+              <select id="b-urgency" name="urgency">
+                <option>不急，可以慢慢聊</option>
+                <option>有點想快一點</option>
+                <option>很急，想盡快聯絡</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="b-msg">備註</label>
+              <textarea id="b-msg" name="message" placeholder="想多說一點的話，寫在這裡"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-navy" style="justify-content:center;">確認預約</button>
+        <p class="form-note">送出後會自動整理您的需求內容並開啟 LINE，貼上傳送給我，我收到後會盡快與您聯繫。</p>
+        <textarea id="bookingSummary" readonly hidden style="min-height:110px;"></textarea>
         <p id="formStatus" role="status"></p>
       </form>
     </div>
@@ -566,19 +642,63 @@
 
   var form = document.getElementById('bookingForm');
   var status = document.getElementById('formStatus');
+  var summaryBox = document.getElementById('bookingSummary');
   if(form){
     form.addEventListener('submit', function(e){
       e.preventDefault();
       try{
         var name = document.getElementById('b-name').value;
         var phone = document.getElementById('b-phone').value;
+        var lineId = document.getElementById('b-line').value;
         var date = document.getElementById('b-date').value;
-        var topic = document.getElementById('b-topic').value;
+        var time = document.getElementById('b-time').value;
+        var method = (document.querySelector('input[name="method"]:checked') || {}).value || '';
+        var topics = Array.prototype.map.call(
+          document.querySelectorAll('input[name="topic"]:checked'),
+          function(el){ return el.value; }
+        ).join('、');
+        var urgency = document.getElementById('b-urgency').value;
         var msg = document.getElementById('b-msg').value;
-        var subject = encodeURIComponent('預約諮詢：' + name + '（' + topic + '）');
-        var body = encodeURIComponent('姓名：' + name + '\n電話：' + phone + '\n希望日期：' + date + '\n諮詢項目：' + topic + '\n需求說明：' + msg);
-        window.location.href = 'mailto:?subject=' + subject + '&body=' + body;
-        status.textContent = '已為您開啟郵件軟體，請確認寄出；也可以直接加 LINE 或撥打電話聯絡我。';
+
+        var lines = [
+          '【線上預約】青埔房仲小賈',
+          '姓名：' + name,
+          '電話：' + phone,
+          lineId ? ('LINE ID：' + lineId) : null,
+          '希望時段：' + date + ' ' + time,
+          '見面方式：' + method,
+          '想聊的項目：' + (topics || '未選擇'),
+          '急迫程度：' + urgency,
+          msg ? ('備註：' + msg) : null
+        ].filter(Boolean);
+        var text = lines.join('\n');
+
+        if(summaryBox){
+          summaryBox.value = text;
+          summaryBox.hidden = false;
+        }
+
+        var copied = false;
+        try{
+          if(navigator.clipboard && navigator.clipboard.writeText){
+            navigator.clipboard.writeText(text);
+            copied = true;
+          }
+        }catch(clipErr){}
+        if(!copied && summaryBox){
+          try{
+            summaryBox.focus();
+            summaryBox.select();
+            document.execCommand('copy');
+            copied = true;
+          }catch(execErr){}
+        }
+
+        window.open('https://line.me/ti/p/~show08955', '_blank', 'noopener');
+
+        status.textContent = copied
+          ? '已複製您的預約內容，LINE 已為您開啟，請直接貼上（長按畫面選擇貼上）並傳送給我！'
+          : '已為您開啟 LINE，請把下方欄位裡的預約內容複製後貼上傳送給我！';
       }catch(err){
         status.textContent = '請直接加 LINE 或撥打電話聯絡我，謝謝。';
       }
