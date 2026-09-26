@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://justinchou168.github.io/qingpu-realtor/sitemap.xml
