@@ -28,322 +28,11 @@
   "award": ["111年第二季績優人員"]
 }
 </script>
-<style>
-  :root{
-    --navy:#4A4339;
-    --navy-deep:#332E27;
-    --orange:#A98763;
-    --gold:#C9B896;
-    --white:#FFFFFF;
-
-    --bg:#F2EDE4;
-    --surface:#E6DFD1;
-    --surface-navy:#EAE4D6;
-    --ink:#3A362F;
-    --ink-soft:#8A8275;
-    --line:#D9D1C0;
-    --shadow:0 16px 36px -28px rgba(60,52,40,0.25);
-  }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --navy:#C8C0B0;
-      --navy-deep:#DCD5C4;
-      --orange:#C9A97E;
-      --gold:#DCC79A;
-      --white:#FFFFFF;
-
-      --bg:#211E1A;
-      --surface:#2A2620;
-      --surface-navy:#2E2A23;
-      --ink:#EDE8DE;
-      --ink-soft:#A79E8E;
-      --line:#3D372E;
-      --shadow:0 16px 36px -24px rgba(0,0,0,0.5);
-    }
-  }
-  :root[data-theme="dark"]{
-    --navy:#C8C0B0;
-    --navy-deep:#DCD5C4;
-    --orange:#C9A97E;
-    --gold:#DCC79A;
-    --white:#FFFFFF;
-
-    --bg:#211E1A;
-    --surface:#2A2620;
-    --surface-navy:#2E2A23;
-    --ink:#EDE8DE;
-    --ink-soft:#A79E8E;
-    --line:#3D372E;
-    --shadow:0 16px 36px -24px rgba(0,0,0,0.5);
-  }
-
-  *{box-sizing:border-box;}
-  body{
-    margin:0;background:var(--bg);color:var(--ink);
-    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
-    padding-bottom:64px;
-  }
-  a{color:inherit;}
-  img{max-width:100%;display:block;}
-  h1,h2,h3{margin:0;text-wrap:balance;font-family:"Noto Sans TC",sans-serif;}
-  .mono{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;}
-  .wrap{max-width:1080px;margin-inline:auto;padding-inline:20px;}
-  @media (min-width:720px){.wrap{padding-inline:40px;}}
-  section{padding-block:64px;}
-
-  /* topbar + nav */
-  .topbar{background:var(--navy);color:#fff;font-size:.8rem;}
-  .topbar-row{display:flex;flex-wrap:wrap;gap:6px 14px;padding-block:8px;justify-content:center;text-align:center;}
-  .topbar-row .sep{opacity:.55;}
-  header.site{
-    position:sticky;top:env(safe-area-inset-top,0px);z-index:40;
-    background:color-mix(in srgb, var(--bg) 90%, transparent);
-    backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
-  }
-  .navrow{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:1.05rem;color:var(--navy);}
-  .brand .mark{
-    width:36px;height:36px;border-radius:9px;background:var(--navy);color:#fff;
-    display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1rem;flex:none;
-  }
-  nav.links{display:none;gap:26px;font-size:.92rem;color:var(--ink-soft);}
-  @media (min-width:860px){nav.links{display:flex;}}
-  nav.links a{text-decoration:none;}
-  nav.links a:hover{color:var(--navy);}
-
-  .btn{
-    display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:8px;
-    font-size:.9rem;font-weight:700;text-decoration:none;border:1px solid transparent;
-    cursor:pointer;white-space:nowrap;
-  }
-  .btn-orange{background:var(--orange);color:#fff;}
-  .btn-orange:hover{filter:brightness(0.92);}
-  .btn-navy{background:var(--navy);color:#fff;}
-  .btn-navy:hover{background:var(--navy-deep);}
-  .btn-ghost{background:transparent;border-color:var(--line);color:var(--ink);}
-  .btn-ghost:hover{border-color:var(--navy);color:var(--navy);}
-
-  /* hero */
-  .hero{
-    background:linear-gradient(180deg,var(--surface-navy),var(--bg) 70%);
-    padding-block:48px 40px;
-  }
-  .hero .wrap{display:flex;flex-direction:column;align-items:center;text-align:center;gap:22px;}
-  .photo-frame{position:relative;width:min(240px,55vw);}
-  .photo-frame::before{
-    content:"";position:absolute;inset:-12px;border-radius:50%;
-    background:conic-gradient(from 200deg, var(--gold), var(--orange), var(--navy), var(--gold));
-    z-index:0;
-  }
-  .photo-frame img{
-    position:relative;z-index:1;border-radius:50%;aspect-ratio:1/1;object-fit:cover;
-    border:5px solid var(--bg);box-shadow:var(--shadow);
-  }
-  .eyebrow{
-    display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:800;
-    color:var(--orange);letter-spacing:.06em;
-  }
-  .hero h1{font-size:clamp(1.7rem,4.4vw,2.5rem);font-weight:900;color:var(--navy);line-height:1.35;}
-  .hero .tagline{font-size:1.02rem;color:var(--ink-soft);max-width:46ch;line-height:1.85;}
-
-  .checklist{
-    display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:center;
-    list-style:none;padding:0;margin:0;
-  }
-  .checklist li{
-    display:flex;align-items:center;gap:7px;font-size:.9rem;font-weight:700;color:var(--navy);
-  }
-  .checklist li::before{content:"✔";color:var(--orange);font-size:.85rem;}
-
-  .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;}
-
-  .stat-row{
-    display:grid;grid-template-columns:1fr;gap:12px;width:100%;max-width:620px;
-  }
-  @media (min-width:560px){.stat-row{grid-template-columns:repeat(3,1fr);}}
-  .stat-tile{
-    background:var(--bg);border:1px solid var(--line);border-radius:14px;
-    padding:16px 14px;text-align:center;
-  }
-  .stat-tile .num{font-family:"IBM Plex Mono",monospace;font-weight:700;color:var(--navy);font-size:1rem;}
-  .stat-tile .lbl{font-size:.78rem;color:var(--ink-soft);margin-top:4px;}
-
-  /* section head */
-  .head{max-width:60ch;margin-inline:auto;text-align:center;margin-bottom:36px;}
-  .head .eyebrow{margin-bottom:10px;}
-  .head h2{font-size:clamp(1.4rem,3vw,1.9rem);font-weight:900;color:var(--navy);}
-  .head p{margin-top:12px;color:var(--ink-soft);line-height:1.8;}
-
-  /* 服務區域 */
-  .area{background:var(--surface);}
-  .area-tags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:6px;}
-  .area-tag{
-    font-size:.85rem;font-weight:700;color:var(--navy-deep);background:var(--bg);
-    border:1px solid var(--line);border-radius:999px;padding:8px 16px;
-  }
-
-  /* why grid */
-  .grid4{display:grid;grid-template-columns:1fr;gap:18px;}
-  @media (min-width:640px){.grid4{grid-template-columns:1fr 1fr;}}
-  @media (min-width:1000px){.grid4{grid-template-columns:repeat(4,1fr);}}
-  .card{
-    background:var(--bg);border:1px solid var(--line);border-radius:16px;
-    padding:24px 22px;display:flex;flex-direction:column;gap:12px;
-  }
-  .card .num{font-family:"IBM Plex Mono",monospace;color:var(--gold);font-size:.85rem;font-weight:700;}
-  .card h3{font-size:1.05rem;font-weight:800;color:var(--navy);}
-  .card p{margin:0;font-size:.92rem;line-height:1.75;color:var(--ink-soft);}
-
-  /* 戰績 */
-  .record-plaques{display:grid;grid-template-columns:1fr;gap:18px;max-width:320px;margin-inline:auto;}
-  .plaque{
-    position:relative;background:linear-gradient(160deg,var(--navy),var(--navy-deep));
-    color:#fff;border-radius:18px;padding:30px 26px;text-align:center;
-    box-shadow:var(--shadow);overflow:hidden;
-  }
-  .plaque::after{
-    content:"";position:absolute;inset:0;
-    background:radial-gradient(120px 120px at 85% -10%, color-mix(in srgb, var(--gold) 55%, transparent), transparent);
-  }
-  .plaque .year{font-family:"IBM Plex Mono",monospace;font-size:.85rem;letter-spacing:.08em;opacity:.85;}
-  .plaque .title{font-size:1.5rem;font-weight:900;margin-top:10px;color:var(--gold);}
-  .plaque .sub{margin-top:8px;font-size:.85rem;opacity:.85;}
-  .record-note{text-align:center;color:var(--ink-soft);max-width:56ch;margin:26px auto 0;line-height:1.8;font-size:.94rem;}
-
-  /* 服務項目 */
-  .services .grid3{display:grid;grid-template-columns:1fr;gap:18px;}
-  @media (min-width:560px){.services .grid3{grid-template-columns:repeat(2,1fr);}}
-  .svc{
-    background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:28px 24px;
-    display:flex;flex-direction:column;gap:12px;
-  }
-  .svc .icon{
-    width:46px;height:46px;border-radius:12px;background:var(--navy);color:#fff;
-    display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.15rem;
-  }
-  .svc h3{font-size:1.08rem;font-weight:800;color:var(--navy);}
-  .svc p{margin:0;font-size:.9rem;line-height:1.8;color:var(--ink-soft);}
-
-  /* articles */
-  .tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:28px;}
-  .tab-btn{
-    font-size:.85rem;font-weight:700;color:var(--ink-soft);background:var(--bg);
-    border:1px solid var(--line);border-radius:999px;padding:8px 16px;cursor:pointer;
-  }
-  .tab-btn[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff;}
-  .grid-articles{display:grid;grid-template-columns:1fr;gap:18px;}
-  @media (min-width:760px){.grid-articles{grid-template-columns:repeat(3,1fr);}}
-  .article{
-    border:1px solid var(--line);border-radius:16px;overflow:hidden;
-    display:flex;flex-direction:column;background:var(--bg);
-  }
-  .article .tagline2{
-    background:var(--surface-navy);color:var(--navy-deep);
-    font-size:.74rem;font-weight:700;padding:5px 12px;border-radius:999px;
-    width:fit-content;margin:18px 20px 0;
-  }
-  .article h3{padding:12px 20px 0;font-size:1.02rem;line-height:1.6;font-weight:800;color:var(--navy);}
-  .article p{padding:8px 20px 20px;margin:0;font-size:.86rem;color:var(--ink-soft);line-height:1.75;}
-  .article .status{
-    margin-top:auto;padding:12px 20px;border-top:1px solid var(--line);
-    font-size:.78rem;color:var(--ink-soft);display:flex;align-items:center;gap:6px;
-  }
-  .article .status::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);}
-  .read-more-btn{
-    margin:0 20px 16px;align-self:flex-start;background:none;border:none;cursor:pointer;
-    font-size:.82rem;font-weight:700;color:var(--navy);padding:0;
-  }
-  .article-full{padding:0 20px 16px;display:flex;flex-direction:column;gap:12px;}
-  .article-full h4{font-size:.92rem;font-weight:800;color:var(--navy);margin:6px 0 0;}
-  .article-full p{margin:0;font-size:.86rem;line-height:1.85;color:var(--ink-soft);}
-  .article-full ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px;}
-  .article-full li{font-size:.86rem;line-height:1.75;color:var(--ink-soft);}
-  .article-full li strong{color:var(--ink);}
-  .article-disclaimer{font-size:.76rem !important;color:var(--ink-soft);opacity:.85;border-top:1px dashed var(--line);padding-top:10px;}
-
-  /* 預約系統 */
-  .booking{background:var(--surface-navy);}
-  .booking-grid{display:grid;grid-template-columns:1fr;gap:36px;}
-  @media (min-width:900px){.booking-grid{grid-template-columns:.9fr 1.1fr;}}
-  .line-cta{
-    background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:28px 26px;
-    display:flex;flex-direction:column;gap:16px;box-shadow:var(--shadow);
-  }
-  .line-cta h3{font-size:1.1rem;font-weight:900;color:var(--navy);}
-  .contact-card{
-    display:flex;align-items:center;gap:14px;border:1px solid var(--line);border-radius:12px;
-    padding:14px 16px;text-decoration:none;color:var(--ink);
-  }
-  .contact-card:hover{border-color:var(--navy);}
-  .contact-card .icon{
-    width:40px;height:40px;border-radius:50%;background:var(--surface-navy);color:var(--navy-deep);
-    display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex:none;
-  }
-  .contact-card .label{font-size:.76rem;color:var(--ink-soft);}
-  .contact-card .value{font-family:"IBM Plex Mono",monospace;font-size:1rem;font-weight:700;}
-
-  form.booking-form{
-    background:var(--bg);border:1px solid var(--line);border-radius:18px;
-    padding:28px 26px;display:flex;flex-direction:column;gap:14px;
-  }
-  .field{display:flex;flex-direction:column;gap:6px;}
-  .field label{font-size:.82rem;color:var(--ink-soft);font-weight:700;}
-  .field input,.field select,.field textarea{
-    border:1px solid var(--line);border-radius:10px;background:var(--surface);
-    color:var(--ink);padding:11px 13px;font-size:.95rem;font-family:inherit;
-  }
-  .field textarea{resize:vertical;min-height:80px;}
-  .field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--navy);outline-offset:1px;}
-  .two-col{display:grid;grid-template-columns:1fr;gap:14px;}
-  @media (min-width:520px){.two-col{grid-template-columns:1fr 1fr;}}
-  .form-note{font-size:.8rem;color:var(--ink-soft);}
-  #formStatus{font-size:.86rem;color:var(--navy-deep);min-height:1.2em;}
-
-  .step{display:flex;gap:14px;padding-block:18px;border-bottom:1px solid var(--line);}
-  .step:first-of-type{padding-top:0;}
-  .step-num{
-    width:26px;height:26px;border-radius:50%;background:var(--navy);color:#fff;
-    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.82rem;flex:none;
-  }
-  .step-body{flex:1;display:flex;flex-direction:column;gap:12px;min-width:0;}
-  .step-body h4{font-size:.95rem;font-weight:800;color:var(--navy);margin:0;}
-  .chip-group{display:flex;flex-wrap:wrap;gap:9px;}
-  .chip{
-    display:flex;align-items:center;gap:6px;font-size:.84rem;color:var(--ink);
-    border:1px solid var(--line);border-radius:999px;padding:8px 14px;cursor:pointer;background:var(--surface);
-  }
-  .chip input{accent-color:var(--navy);margin:0;}
-  #bookingSummary{
-    width:100%;border:1px solid var(--line);border-radius:10px;background:var(--surface);
-    color:var(--ink);padding:11px 13px;font-size:.85rem;font-family:"IBM Plex Mono",monospace;
-  }
-
-  footer{padding-block:32px;background:var(--navy);color:#fff;}
-  .footer-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;font-size:.82rem;color:#CBDCEF;}
-  .footer-row .brand{color:#fff;font-size:.95rem;}
-  .footer-row .brand .mark{background:var(--gold);color:var(--navy-deep);}
-
-  /* sticky bottom action bar (cathome-style quick contact) */
-  .quickbar{
-    position:fixed;left:0;right:0;bottom:0;z-index:50;
-    display:grid;grid-template-columns:1fr 1fr 1fr;
-    background:var(--navy);color:#fff;
-    padding-bottom:env(safe-area-inset-bottom,0px);
-    box-shadow:0 -10px 24px -18px rgba(0,0,0,.5);
-  }
-  .quickbar a{
-    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
-    padding-block:10px;text-decoration:none;color:#fff;font-size:.74rem;font-weight:700;
-    border-right:1px solid rgba(255,255,255,.15);
-  }
-  .quickbar a:last-child{border-right:none;}
-  .quickbar .qicon{font-size:1.05rem;}
-</style>
-</head>
-<body>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=IBM+Plex+Mono:wght@500;600&display=swap">
-
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
 <div class="topbar">
   <div class="wrap topbar-row">
     <span>📞 0906-848-168</span>
@@ -509,186 +198,79 @@
         <span class="tagline2">興建中</span>
         <h3>國泰人壽高鐵站前開發案動土，總投資約 500 億元</h3>
         <p>2025 年 9 月 30 日動土，基地約 3.2 萬坪，規劃 5 棟複合式大樓，含智慧辦公、購物商場與星級旅館，目標 2030 年完工。</p>
-        <button type="button" class="read-more-btn" aria-expanded="false">展開閱讀全文 ▾</button>
-        <div class="article-full" hidden>
-          <p>鐵道局攜手國泰人壽打造的「高速鐵路桃園車站特定區開發案」，於 2025 年 9 月 30 日正式動土，由桃園市長張善政、鐵道局長楊正君、國泰人壽總經理劉上旗共同執鏟。這是目前高鐵沿線規模最大的開發案，基地約 3.2 萬坪（10 公頃），總投資額約 500 億元。</p>
-          <p>開發內容規劃 5 棟複合式大樓，總開發樓地板面積約 15 萬坪，其中智慧辦公約 5.2 萬坪、購物商場約 5.6 萬坪、星級旅館約 9,000 坪，並將引進零售、餐飲、演藝場等特色娛樂設施。基地內也規劃 2 公頃站區廣場，並以地下聯通道直接串接高鐵桃園車站廣場、停車場及 YouBike 站，未來下高鐵就能直接走進商場。</p>
-          <p>工程期預計 5 年，目標 2030 年完工，官方估計可創造約 2.4 萬個就業機會，帶動周邊上看百億元商機。對青埔而言，這代表站前天際線即將出現實質改變，也是評估區域長期發展潛力時值得關注的指標案。</p>
-          <p class="article-disclaimer">本文整理自公開新聞報導，實際進度以國泰人壽及桃園市政府最新公告為準。</p>
-        </div>
+        <a class="read-more-btn" href="articles/cathay-station-development.html">閱讀全文 →</a>
         <div class="status">資料整理：統計至 2026 年 9 月</div>
       </div>
       <div class="article" data-cat="news">
         <span class="tagline2">興建中</span>
         <h3>桃園市立美術館持續施工，完工時程各方推估不一</h3>
         <p>本館仍在興建中，目前公開資訊對完工時間說法不一（有 2026 年下半年、也有 2028 年第一季的說法），實際以官方最新公告為準。</p>
-        <button type="button" class="read-more-btn" aria-expanded="false">展開閱讀全文 ▾</button>
-        <div class="article-full" hidden>
-          <p>桃園市立美術館園區採分階段完工模式。園區內的「桃園市兒童美術館」由日本建築師山本理顯操刀設計，已於 2023 年 7 月完工，2024 年 4 月 3 日正式開館營運，是全台第一座以兒童為主體的美術館，目前已成為青埔親子休閒的重要去處。</p>
-          <p>至於作為園區主體的「市立美術館本館」，目前仍在興建中。查詢多方公開資訊發現，完工時程說法不一：部分報導指出本館可望於 2026 年下半年啟用，也有資料指向 2028 年第一季才會正式開館，兩者落差不小。</p>
-          <p>建議想以此作為置產參考時間點的朋友，還是要以桃園市政府文化局或美術館官方最新公告為準，避免用單一新聞稿的時間表下判斷。</p>
-          <p class="article-disclaimer">本文整理自公開新聞與官方資訊，完工時程各方說法不一，實際以官方最新公告為準。</p>
-        </div>
+        <a class="read-more-btn" href="articles/taoyuan-art-museum.html">閱讀全文 →</a>
         <div class="status">資料整理：統計至 2026 年 9 月</div>
       </div>
       <div class="article" data-cat="news">
         <span class="tagline2">招商中</span>
         <h3>亞矽創招商說明會登場，1.7 萬坪精華地拚 AI 聚落</h3>
         <p>「亞洲矽谷創新研發中心」8 月 28 日公告招商，總面積約 5.6 公頃（逾 1.7 萬坪），分產業基地（3.8 公頃，聚焦 AI 應用創新研發，須六成以上產業使用）與住宅基地（1.8 公頃，須含 200 房以上五星級旅館及複合商場）。投標截止 2027 年 1 月 25 日，預計同年第一季完成評選簽約，開發規模估上看 600 億元。</p>
-        <button type="button" class="read-more-btn" aria-expanded="false">展開閱讀全文 ▾</button>
-        <div class="article-full" hidden>
-          <p>「亞洲矽谷創新研發中心」（亞矽創）8 月 28 日正式公告招商，這是青埔核心地段近年規模最大的一波產業用地釋出案，鄰近桃園會展中心及捷運站。</p>
-          <p>本案採創新的「雙基地開發模式」：產業基地（產二，約 3.8 公頃、1.2 萬坪）以合作開發方式進行，鎖定 AI 應用創新研發，尤其是產業鏈後端的應用服務，要求基地六成以上作產業使用，避免淪為住宅或商業用途；住宅基地（約 1.8 公頃、5,300 坪）則採附條件標售，開發商須完成 200 房以上五星級觀光旅館及複合式商場的興建義務，才能取得可開發住宅的權利。基地內也規劃新創育成、智慧地圖資訊、托育及運動中心等公益設施。</p>
-          <p>招商時程方面，9 月 24 日截止釋疑申請，投標將於 2027 年 1 月 25 日截止，預計 2027 年第一季完成評選及簽約，整體開發規模估上看 600 億元，可望為青埔帶入更多科技與 AI 產業人口。</p>
-          <p class="article-disclaimer">本文整理自公開新聞報導，投標與簽約時程仍可能調整，實際以航空城公司最新公告為準。</p>
-        </div>
+        <a class="read-more-btn" href="articles/asia-silicon-valley-hub.html">閱讀全文 →</a>
         <div class="status">資料整理：統計至 2026 年 9 月</div>
       </div>
       <div class="article" data-cat="news">
         <span class="tagline2">興建中</span>
         <h3>桃園航空城搬遷期程延至 2026 年底</h3>
         <p>全台史上規模最大區段徵收案，計畫總面積 4,564 公頃；D1 標工程進度大幅超前，施工面積達 192.36 公頃。</p>
-        <button type="button" class="read-more-btn" aria-expanded="false">展開閱讀全文 ▾</button>
-        <div class="article-full" hidden>
-          <p>桃園航空城計畫是台灣歷史上規模最大的區段徵收案，計畫總面積達 4,564 公頃，實際徵收土地 3,148 公頃，影響居民超過 3 萬人。</p>
-          <p>土地點交進度方面，截至 2026 年 4 月底，機場園區內分配的 2,074 筆土地已全數完成點交；周邊地區分配的 1,169 筆土地中，也有 1,164 筆同意點交。工程面最受矚目的 D1 標工程，施工面積廣達 192.36 公頃，目前進度已完成近一半，大幅超前預定進度，還因此獲得桃園市「桃安獎」優等肯定。</p>
-          <p>不過對居民而言，搬遷過程仍有現實壓力：最後搬遷期限已延後到 2026 年底，部分拆遷戶持續要求政府比照承諾展延加速開發獎勵金與最後搬遷補償金的申請期限。對青埔周邊的購屋族來說，航空城計畫牽動的是更長遠的區域發展格局，建議把搬遷進度、土地點交狀況當作觀察區域發展成熟度的重要指標。</p>
-          <p class="article-disclaimer">本文整理自公開新聞與政府公告，搬遷及補償相關爭議持續發展中，實際以主管機關最新公告為準。</p>
-        </div>
+        <a class="read-more-btn" href="articles/aerotropolis-relocation.html">閱讀全文 →</a>
         <div class="status">資料整理：統計至 2026 年 9 月</div>
       </div>
       <div class="article" data-cat="news">
         <span class="tagline2">興建中</span>
         <h3>桃園捷運綠線北段拚 2026 年底通車</h3>
         <p>GC01 高架段工程進度已達 93.85%，2026 年 8 月已進入全線無人駕駛測試階段，部分車站也已開放市民參觀；北段通車後，坑口端可望銜接機場捷運，為大桃園地區增加新的轉乘選項。</p>
-        <button type="button" class="read-more-btn" aria-expanded="false">展開閱讀全文 ▾</button>
-        <div class="article-full" hidden>
-          <p>桃園捷運綠線是繼機場捷運後，青埔與大桃園地區另一條重要的軌道建設。北段第一階段規劃 7 個車站，市府持續朝 2026 年底通車目標推進。</p>
-          <p>工程進度方面，GC01 標高架段實際完成度已達 93.85%，2026 年 8 月列車已進入全線無人駕駛測試階段，其中一站也已提前開放市民入內參觀，象徵通車進入倒數階段。</p>
-          <p>後續延伸計畫也已排定：2028 年預計向南延伸通車至景福宮一帶，2031 年目標完成主線全線通車，屆時將串聯桃園市中心與蘆竹、青埔等地區。對青埔生活圈來說，北段路網通車後，坑口端可望銜接機場捷運 A11 坑口站，等於在既有的機場捷運之外，多了一條轉乘選項，有助於分散通勤動線、提升區域可及性。</p>
-          <p class="article-disclaimer">本文整理自公開新聞與桃園市政府資訊，通車時程仍可能調整，實際以官方最新公告為準。</p>
-        </div>
+        <a class="read-more-btn" href="articles/mrt-green-line.html">閱讀全文 →</a>
         <div class="status">資料整理：統計至 2026 年 9 月</div>
       </div>
       <div class="article" data-cat="news">
         <span class="tagline2">送審中</span>
         <h3>陽明交大青埔附設醫院規劃 400 床，拚 2032 年營運</h3>
         <p>近機捷 A19 站，基地約 2.3 公頃，規劃 300 床一般病床＋100 床特殊病床。今年 8 月已通過市府衛生局審查，預計年底前送衛福部審查，將設 24 小時急診，補足青埔周邊急重症醫療量能。</p>
-        <button type="button" class="read-more-btn" aria-expanded="false">展開閱讀全文 ▾</button>
-        <div class="article-full" hidden>
-          <p>陽明交通大學規劃在青埔設立附設醫院，基地位於中壢區文中里與文德里之間，鄰近機捷 A19 站，步行約 3 分鐘可達，基地面積約 2.3 公頃。</p>
-          <p>這塊土地原本是市府保留給大學設立校區使用，但校區計畫一度停滯，陽明交大後續改以設立醫院的方式延續合作。醫院規劃以 300 床一般病床搭配 100 床特殊病床，總規模達 400 床，將建置 24 小時急診，並結合中西醫整合服務、高齡科學照護與 AI 醫療等多元服務內容，目標補足青埔周邊長期缺乏的急重症醫療量能。</p>
-          <p>進度方面，計畫已於 2026 年 8 月通過市府衛生局審查，預計年底前送衛生福利部審查，桃園市長張善政公開表示希望能在 2032 年前正式營運服務。對青埔居民而言，這代表未來看病、掛急診不用再長途跋涉到其他區域的大型醫院。</p>
-          <p class="article-disclaimer">本文整理自公開新聞報導，審查進度與營運時程仍可能調整，實際以衛生福利部及桃園市政府最新公告為準。</p>
-        </div>
+        <a class="read-more-btn" href="articles/nycu-hospital.html">閱讀全文 →</a>
         <div class="status">資料整理：統計至 2026 年 9 月</div>
       </div>
       <div class="article" data-cat="news">
         <span class="tagline2">已核可</span>
         <h3>清華大學桃園醫院委由高醫大興建營運，投資規模達百億元</h3>
         <p>基地約 7.2 公頃（醫療用地 5 公頃＋教研用地 2.2 公頃），鄰近機捷 A16 橫山站。清大委託高雄醫學大學以 50 年 BOT 模式興建營運，總投資約新台幣 100 億元，聚焦癌症治療與重症醫療，規劃 39 項專科。首期目標 515 床，最終規劃 910 床，朝醫學中心等級發展，預計 2028 年完工啟用。</p>
-        <button type="button" class="read-more-btn" aria-expanded="false">展開閱讀全文 ▾</button>
-        <div class="article-full" hidden>
-          <p>清華大學桃園醫院是目前青埔周邊規劃規模最大的醫療建設案，基地位於機捷 A16 橫山站旁，由市府無償提供 7.2 公頃土地，其中 5 公頃作醫療用地、2.2 公頃作教研用地。</p>
-          <p>這個案子採取的合作模式相當特別：清華大學委託高雄醫學大學，以 50 年期 BOT 模式負責興建與營運，高醫大並提供全部資金，總投資額約新台幣 100 億元，是目前教育類 BOT 案中規模最大的投資案之一。醫院發展重點鎖定癌症治療與重症醫療，規劃 39 項專科服務。</p>
-          <p>床數規劃採分期擴建：目前核准床數約 299 床，首期目標達 515 床，最終規劃達 910 床，晉升醫學中心等級的教學醫院。整體目標 2028 年完工啟用。與陽明交大附醫合計，未來青埔周邊將同時擁有兩家大型醫院，對區域的醫療機能與長期發展都是重要利多。</p>
-          <p class="article-disclaimer">本文整理自公開新聞與校方資訊，床數與時程為分期規劃，實際以清華大學及衛生福利部最新公告為準。</p>
-        </div>
+        <a class="read-more-btn" href="articles/nthu-hospital.html">閱讀全文 →</a>
         <div class="status">資料整理：統計至 2026 年 9 月</div>
       </div>
       <div class="article" data-cat="news">
         <span class="tagline2">審查中</span>
         <h3>桃園捷運青線可行性研究送中央審查</h3>
         <p>全長約 15.76 公里，規劃 15 站，串聯桃園市中心、蘆竹大竹與青埔高鐵特區。市府已於 2026 年 2 月送交通部審議，8 月完成修正版再送審，9 月鐵道局並赴現地會勘，路線與站址仍可能調整。</p>
-        <button type="button" class="read-more-btn" aria-expanded="false">展開閱讀全文 ▾</button>
-        <div class="article-full" hidden>
-          <p>除了機場捷運與綠線，桃園捷運「青線」是另一條規劃中、直接串聯青埔與桃園市中心的路網，全長約 15.76 公里，規劃 15 個車站，路線從桃園市中心一路延伸到蘆竹大竹，再接入青埔高鐵特區。</p>
-          <p>審查時程方面，桃園市政府已於 2026 年 2 月 12 日將可行性研究報告正式送交通部審議，交通部 6 月 29 日提出書面審查意見後，市府依意見修正內容，並在 8 月 17 日再度送交修正版報告。9 月 14 日，交通部鐵道局進一步邀集中央相關單位赴現地會勘，顯示審查程序持續推進中。</p>
-          <p>不過青線目前仍處於「可行性研究中央審查」階段，尚未正式核定，這代表路線、站址與工程內容都還有調整空間，不宜視為定案規劃。對關注青埔未來交通建設的朋友，建議把青線視為中長期觀察指標，實際定案內容仍要等交通部核定後才算數。</p>
-          <p class="article-disclaimer">本文整理自公開新聞與桃園市政府資訊，本案尚未核定，路線與站址仍可能調整，實際以交通部最新公告為準。</p>
-        </div>
+        <a class="read-more-btn" href="articles/mrt-blue-line.html">閱讀全文 →</a>
         <div class="status">資料整理：統計至 2026 年 9 月</div>
       </div>
       <div class="article" data-cat="knowledge">
         <span class="tagline2">行情觀察</span>
         <h3>青埔特定區房價現況拆解</h3>
         <p>從生活機能到交通動線，拆解青埔生活圈的價格邏輯。</p>
-        <button type="button" class="read-more-btn" aria-expanded="false">展開閱讀全文 ▾</button>
-        <div class="article-full" hidden>
-          <p>青埔從高鐵特定區起步，這幾年隨著捷運、產業園區、醫院、美術館等建設陸續到位，房價也走出自己的節奏。</p>
-          <h4>目前行情落在哪裡？</h4>
-          <p>以 2026 年第一季公開資料估算，A17 領航站周邊約 51.7 萬/坪、A18 高鐵站約 54.1 萬/坪、A19 體育園區站約 53.5 萬/坪，是目前市場上較常見的成交區間。指標建案裡的高樓層景觀戶，行情可以挑戰 68～78 萬/坪，部分頂樓景觀戶甚至站上 8 字頭（80 萬以上）。</p>
-          <h4>2024 年打房後，青埔怎麼樣了？</h4>
-          <p>2024 年中央銀行祭出信用管制措施後，不少區域房價出現修正，但青埔沒有明顯下跌，比較像是「量縮價穩」的盤整格局。青埔目前規劃容納約 6 萬人，實際入住人口已達 5 萬人上下，生活機能持續補強而非停滯，這是市場信心的重要支撐。</p>
-          <h4>買在哪裡比較保值？</h4>
-          <p>青埔的價值明顯是「產業驅動型」，不是單純靠交通建設撐盤。實務上可以用亞矽創中心或 A18、A19 站點為圓心，抓步行約 12 分鐘（800～1,000 公尺）內的範圍當作核心區，這個範圍內的物件通常抗跌性較好；超過這個距離，行情支撐力會隨距離遞減，這也是外圍區跟核心區價差的主要原因。</p>
-          <h4>給想進場的你</h4>
-          <p>青埔不是「閉著眼睛買都會漲」的區域，但也不是投機炒作的泡沫區——它比較像是一個還在長大、但骨架已經成形的區域。如果你在意的是自住品質跟長期保值，建議把重大建設的落地時程（不是只看規劃階段）當作判斷依據；想深入聊你考慮的物件，歡迎直接找我。</p>
-          <p class="article-disclaimer">本文行情數據參考 2026 年第一季公開市場資訊整理，實際成交價受個案條件影響，建議看屋議價前再次向我確認最新行情。</p>
-        </div>
+        <a class="read-more-btn" href="articles/qingpu-housing-price.html">閱讀全文 →</a>
         <div class="status">已發布：統計至 2026 年 9 月</div>
       </div>
       <div class="article" data-cat="knowledge">
         <span class="tagline2">資產配置</span>
         <h3>不動產在資產配置中該佔多少比重？</h3>
         <p>從財務階段出發，聊聊房產配置的時機與比重評估。</p>
-        <button type="button" class="read-more-btn" aria-expanded="false">展開閱讀全文 ▾</button>
-        <div class="article-full" hidden>
-          <p>「該不該買房」常常不是對錯題，而是「現在的你，適合把多少資產放進不動產」的比例題。</p>
-          <h4>沒有標準答案，但有判斷邏輯</h4>
-          <p>不動產最大的特性是「低流動性、高單筆金額、長期持有」。跟股票、基金比起來，房子沒辦法今天想賣就賣、明天就拿到現金；但相對地，它也提供了實質居住價值、抗通膨資產，以及長期持有下相對穩定的資產性質。一般建議把不動產（尤其是自住房）視為「生活必需品優先於投資品」，再回頭看剩餘的可投資資產怎麼分配，避免一買房就把存款用盡、甚至槓桿拉到緊繃，導致收入一有異動就失去財務彈性。</p>
-          <h4>幾個影響比重的關鍵因素</h4>
-          <ul>
-            <li><strong>人生階段</strong>：單身、成家、教育金需求、退休前後，每個階段對「該不該現在買房」的答案都不一樣</li>
-            <li><strong>現金流承受度</strong>：房貸月付金占月收入的比重，建議抓在可負擔範圍內，避免壓縮緊急預備金與其他保障需求</li>
-            <li><strong>資產流動性需求</strong>：手上是否還需要保留一筆隨時可動用的現金，因應突發狀況</li>
-            <li><strong>未來換屋／增貸計畫</strong>：現在買的房子，未來有沒有可能透過「重購退稅」等機制換屋，這也會影響現在該怎麼配置</li>
-          </ul>
-          <h4>不是只有「買不買」，還有「怎麼買」</h4>
-          <p>同樣的預算，全額自備款買一間小一點的房子，跟貸款拉高槓桿買一間大一點的房子，兩種配置方式承擔的風險完全不同。建議結合整體財務狀況（收入穩定性、其他負債、保險保障）一起評估，而不是只看「現在的貸款利率划不划算」。</p>
-          <p>每個人的財務起點、風險承受度都不一樣，這篇談的是通則，實際上你的資產配置比重多少才合理，建議把實際狀況攤開來一起算一次。免費行情評估、貸款試算都可以直接找我聊。</p>
-          <p class="article-disclaimer">本文為一般性財務觀念分享，非個人化投資或理財建議，實際配置請依個人財務狀況審慎評估，必要時諮詢專業財務顧問。</p>
-        </div>
+        <a class="read-more-btn" href="articles/real-estate-asset-allocation.html">閱讀全文 →</a>
         <div class="status">已發布：統計至 2026 年 9 月</div>
       </div>
       <div class="article" data-cat="knowledge">
         <span class="tagline2">稅務試算</span>
         <h3>房地合一稅、重購退稅重點整理</h3>
         <p>資格條件與試算重點，買賣前先搞懂再出手。</p>
-        <button type="button" class="read-more-btn" aria-expanded="false">展開閱讀全文 ▾</button>
-        <div class="article-full" hidden>
-          <p>賣房要繳多少稅，常常是屋主最在意、卻也最容易搞混的問題。這篇整理現行「房地合一稅 2.0」的基本規則，讓你賣房前心裡先有個底。</p>
-          <h4>持有期間，決定基本稅率</h4>
-          <p>房地合一稅以「持有期間」為主要級距，個人交易房地的稅率如下：</p>
-          <ul>
-            <li>持有 2 年以內：45%</li>
-            <li>持有超過 2 年、未逾 5 年：35%</li>
-            <li>持有超過 5 年、未逾 10 年：20%</li>
-            <li>持有超過 10 年：15%</li>
-          </ul>
-          <p>簡單說：持有時間越短，稅率越重；長期持有的房子，稅率會明顯降低。</p>
-          <h4>自住房地，有機會適用優惠稅率</h4>
-          <p>如果賣的是自住房地，符合以下條件，可以適用「400 萬元免稅額＋超過部分 10% 稅率」的優惠，而不是套用上面的持有期間級距：</p>
-          <ul>
-            <li>本人、配偶或未成年子女在該房屋設有戶籍，並「持有＋居住」連續滿 6 年</li>
-            <li>出售前 6 年內，該房屋沒有出租、營業或執行業務使用的紀錄</li>
-            <li>本人、配偶及未成年子女在出售前 6 年內，沒有使用過這項優惠（每 6 年只能用一次）</li>
-          </ul>
-          <p>符合條件的話，課稅所得在 400 萬元以下免稅，超過 400 萬的部分按 10% 稅率課徵，通常比套用持有期間級距划算許多。</p>
-          <h4>換屋族最該搞懂的「重購退稅」</h4>
-          <p>如果你是先賣舊屋、再買新屋（或先買後賣），兩筆交易的「完成移轉登記日」時間差在 2 年以內，就有機會申請重購退稅：</p>
-          <ul>
-            <li>出售的舊屋須符合前述自住房地條件（設籍居住、出售前 1 年內無出租營業使用）</li>
-            <li>退稅金額＝已繳稅額 ×（重購價額 ÷ 出售價額），比率上限 100%——賣小屋買大屋可全額退還或扣抵；賣大屋買小屋則按比率部分退還</li>
-            <li>申請期限：重購房地完成移轉登記次日起 5 年內都可以申請</li>
-          </ul>
-          <p><strong>重要提醒</strong>：重購後的自住房地，5 年內不能改作其他用途（例如出租、營業）或再次移轉，否則國稅局會追繳原本退還或扣抵的稅款。</p>
-          <p>以上是房地合一稅 2.0 目前的現行規定整理，但每個人的持有時間、設籍狀況、過去是否用過優惠都不一樣，實際稅額務必依個案精算，也建議簽約前找會計師或國稅局確認一次。想先抓個大概方向，歡迎跟我聊聊你的物件狀況。</p>
-          <p class="article-disclaimer">本文整理自財政部公開資訊，反映現行法規，惟稅法可能修正，實際申報請以財政部最新公告及個案核定為準，本文不構成正式稅務意見。</p>
-        </div>
+        <a class="read-more-btn" href="articles/real-estate-transaction-tax.html">閱讀全文 →</a>
         <div class="status">已發布：統計至 2026 年 9 月</div>
       </div>
-    </div>
     <p style="text-align:center;font-size:.78rem;color:var(--ink-soft);margin-top:24px;">新聞時事內容整理自公開新聞與政府公告，實際進度可能調整，建議進場前向我確認最新狀況。</p>
   </div>
 </section>
@@ -920,18 +502,6 @@
     });
   }catch(e){}
 
-  try{
-    var readBtns = document.querySelectorAll('.read-more-btn');
-    readBtns.forEach(function(btn){
-      btn.addEventListener('click', function(){
-        var full = btn.nextElementSibling;
-        var expanded = btn.getAttribute('aria-expanded') === 'true';
-        full.hidden = expanded;
-        btn.setAttribute('aria-expanded', String(!expanded));
-        btn.textContent = expanded ? '展開閱讀全文 ▾' : '收合文章 ▴';
-      });
-    });
-  }catch(e){}
 </script>
 </body>
 </html>
