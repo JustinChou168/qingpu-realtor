@@ -22,16 +22,39 @@
 {
   "@context": "https://schema.org",
   "@type": "RealEstateAgent",
+  "@id": "https://justinchou168.github.io/qingpu-realtor/#agent",
   "name": "青埔房仲小賈",
+  "alternateName": ["周家篁", "小賈"],
+  "url": "https://justinchou168.github.io/qingpu-realtor/",
+  "image": "https://justinchou168.github.io/qingpu-realtor/assets/img/hero.jpg",
+  "description": "深耕桃園青埔特定區的房仲，提供不動產買賣、資產配置、稅務諮詢等服務。",
+  "parentOrganization": {"@type": "Organization", "name": "有巢氏房屋青埔A18高鐵加盟店（賀成交不動產股份有限公司）"},
+  "sameAs": [
+    "https://www.591.com.tw/broker37627-sale",
+    "https://www.youtube.com/@JustinChou168",
+    "https://www.tiktok.com/@justinchou5266",
+    "https://www.instagram.com/ka_huang1115/",
+    "https://www.threads.com/@ka_huang1115"
+  ],
   "telephone": "+886-906-848-168",
   "areaServed": ["青埔特定區", "大桃園地區"],
   "knowsAbout": ["不動產買賣", "資產配置", "稅務諮詢"],
   "award": ["111年第二季績優人員"]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "青埔房仲小賈",
+  "alternateName": "青埔房仲｜小賈",
+  "url": "https://justinchou168.github.io/qingpu-realtor/",
+  "inLanguage": "zh-Hant-TW"
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=IBM+Plex+Mono:wght@500;600&display=swap">
-<link rel="stylesheet" href="assets/css/style.css?v=9">
+<link rel="stylesheet" href="assets/css/style.css?v=10">
 </head>
 <body>
 <div class="topbar">
@@ -47,6 +70,8 @@
 <header class="site">
   <div class="wrap navrow">
     <div class="brand"><span class="mark">賈</span>青埔房仲小賈</div>
+    <input type="checkbox" id="navToggle" class="nav-toggle" aria-hidden="true">
+    <label for="navToggle" class="nav-burger" aria-label="開啟選單"><span></span></label>
     <nav class="links">
       <a href="#about">關於小賈</a>
       <a href="#area">服務區域</a>
@@ -543,6 +568,12 @@
 
 <script>
   try{ document.getElementById('year').textContent = new Date().getFullYear(); }catch(e){}
+  try{
+    var navToggle = document.getElementById('navToggle');
+    document.querySelectorAll('nav.links a').forEach(function(a){
+      a.addEventListener('click', function(){ navToggle.checked = false; });
+    });
+  }catch(e){}
   try{
     var now = new Date(), yrs = now.getFullYear() - 2020;
     if(now.getMonth() < 10) yrs--;
