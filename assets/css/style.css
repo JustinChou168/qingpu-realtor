@@ -221,6 +221,23 @@
   .plaque .year{font-family:"IBM Plex Mono",monospace;font-size:.85rem;letter-spacing:.08em;opacity:.85;}
   .plaque .title{font-size:1.5rem;font-weight:900;margin-top:10px;color:var(--gold);}
   .plaque .sub{margin-top:8px;font-size:.85rem;opacity:.85;}
+
+  .case-story{
+    max-width:640px;margin:28px auto 0;background:var(--bg);border:1px solid var(--line);
+    border-radius:18px;padding:28px 26px;box-shadow:var(--shadow);
+  }
+  .case-story .kicker{
+    display:inline-flex;align-items:center;font-family:"IBM Plex Mono",monospace;
+    font-size:.72rem;font-weight:700;letter-spacing:.05em;color:var(--orange);
+    background:var(--surface-navy);border-radius:999px;padding:5px 12px;margin-bottom:14px;
+  }
+  .case-story h3{font-size:1.15rem;font-weight:900;color:var(--navy);line-height:1.5;margin-bottom:14px;}
+  .case-story p{font-size:.92rem;line-height:1.85;color:var(--ink);margin:0 0 12px;}
+  .case-story .case-quote{
+    margin:16px 0 0;padding-top:16px;border-top:1px dashed var(--line);
+    font-size:.88rem;font-style:italic;color:var(--ink-soft);
+  }
+
   .record-note{text-align:center;color:var(--ink-soft);max-width:56ch;margin:26px auto 0;line-height:1.8;font-size:.94rem;}
 
   /* 服務項目 */
