@@ -200,6 +200,8 @@
   .about-grid{display:grid;grid-template-columns:1fr;gap:28px;max-width:900px;margin-inline:auto;}
   @media (min-width:860px){.about-grid{grid-template-columns:1.3fr 1fr;align-items:start;}}
   .about-text p{margin:0 0 14px;line-height:1.9;font-size:.98rem;color:var(--ink);}
+  .about-text .about-exp{font-weight:800;color:var(--navy);}
+  .about-text .about-exp b{color:var(--orange);font-size:1.3em;font-family:"IBM Plex Mono",monospace;}
   .about-fit{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:22px 20px;}
   .about-fit h3{font-size:1rem;font-weight:800;color:var(--navy);margin-bottom:12px;}
 

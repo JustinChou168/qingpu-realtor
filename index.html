@@ -31,7 +31,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=IBM+Plex+Mono:wght@500;600&display=swap">
-<link rel="stylesheet" href="assets/css/style.css?v=8">
+<link rel="stylesheet" href="assets/css/style.css?v=9">
 </head>
 <body>
 <div class="topbar">
@@ -124,6 +124,7 @@
     </div>
     <div class="about-grid">
       <div class="about-text">
+        <p class="about-exp">109 年 11 月取得營業員證照，從業至今 <b id="expYears">5</b> 年。</p>
         <p>不跳舞、不跟風，做自己。我長期在 YouTube、Threads、Instagram 分享青埔與桃園的不動產資訊，讓你在見面之前，就先認識我是什麼樣的人。</p>
         <p>個性偏理性（INTJ），習慣先把數字跟風險攤開講清楚，再陪你做決定。</p>
       </div>
@@ -542,6 +543,11 @@
 
 <script>
   try{ document.getElementById('year').textContent = new Date().getFullYear(); }catch(e){}
+  try{
+    var now = new Date(), yrs = now.getFullYear() - 2020;
+    if(now.getMonth() < 10) yrs--;
+    document.getElementById('expYears').textContent = yrs;
+  }catch(e){}
 
   var form = document.getElementById('bookingForm');
   var status = document.getElementById('formStatus');
