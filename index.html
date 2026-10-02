@@ -13,11 +13,13 @@
 <meta property="og:title" content="青埔房仲小賈">
 <meta property="og:description" content="青埔房仲｜小賈，深耕桃園青埔特定區，服務延伸至大桃園地區，111年第二季榮獲績優人員，提供不動產買賣、資產配置、稅務諮詢等服務，歡迎加LINE預約諮詢。">
 <meta property="og:url" content="https://justinchou168.github.io/qingpu-realtor/">
-<meta property="og:image" content="https://justinchou168.github.io/qingpu-realtor/assets/img/hero.jpg">
+<meta property="og:image" content="https://justinchou168.github.io/qingpu-realtor/assets/img/og-image.jpg?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="青埔房仲小賈">
 <meta name="twitter:description" content="青埔房仲｜小賈，深耕桃園青埔特定區，服務延伸至大桃園地區，111年第二季榮獲績優人員，提供不動產買賣、資產配置、稅務諮詢等服務，歡迎加LINE預約諮詢。">
-<meta name="twitter:image" content="https://justinchou168.github.io/qingpu-realtor/assets/img/hero.jpg">
+<meta name="twitter:image" content="https://justinchou168.github.io/qingpu-realtor/assets/img/og-image.jpg?v=2">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -535,7 +537,7 @@
         </div>
 
         <button type="submit" class="btn btn-navy" style="justify-content:center;">確認預約</button>
-        <p class="form-note">送出後會自動整理您的需求內容並開啟 LINE，貼上傳送給我，我收到後會盡快與您聯繫。</p>
+        <p class="form-note">送出後會自動整理您的需求內容並開啟 LINE，貼上傳送給我，我收到後會盡快與您聯繫。（用電腦瀏覽時會出現 LINE QR code，請用手機掃描加好友。）</p>
         <textarea id="bookingSummary" readonly hidden style="min-height:110px;"></textarea>
         <p id="formStatus" role="status"></p>
       </form>
@@ -581,7 +583,7 @@
   }catch(e){}
 
   var form = document.getElementById('bookingForm');
-  var status = document.getElementById('formStatus');
+  var statusEl = document.getElementById('formStatus');
   var summaryBox = document.getElementById('bookingSummary');
   if(form){
     form.addEventListener('submit', function(e){
@@ -636,11 +638,17 @@
 
         window.open('https://line.me/ti/p/~show08955', '_blank', 'noopener');
 
-        status.textContent = copied
-          ? '已複製您的預約內容，LINE 已為您開啟，請直接貼上（長按畫面選擇貼上）並傳送給我！'
-          : '已為您開啟 LINE，請把下方欄位裡的預約內容複製後貼上傳送給我！';
+        var isDesktop = !window.matchMedia('(pointer: coarse)').matches;
+        if(isDesktop){
+          statusEl.textContent = (copied ? '已複製您的預約內容。' : '請把下方欄位裡的預約內容複製起來。')
+            + '電腦版會跳出 LINE 的 QR code，請用手機掃描加我好友，再把內容貼上傳送給我，我收到後會盡快聯繫您！';
+        }else{
+          statusEl.textContent = copied
+            ? '已複製您的預約內容，LINE 已為您開啟，請直接貼上（長按畫面選擇貼上）並傳送給我！'
+            : '已為您開啟 LINE，請把下方欄位裡的預約內容複製後貼上傳送給我！';
+        }
       }catch(err){
-        status.textContent = '請直接加 LINE 或撥打電話聯絡我，謝謝。';
+        statusEl.textContent = '請直接加 LINE 或撥打電話聯絡我，謝謝。';
       }
     });
   }
