@@ -226,6 +226,7 @@
   /* 服務項目 */
   .services .grid3{display:grid;grid-template-columns:1fr;gap:18px;}
   @media (min-width:560px){.services .grid3{grid-template-columns:repeat(2,1fr);}}
+  @media (min-width:860px){.services .grid3{grid-template-columns:repeat(3,1fr);}}
   .svc{
     background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:28px 24px;
     display:flex;flex-direction:column;gap:12px;
