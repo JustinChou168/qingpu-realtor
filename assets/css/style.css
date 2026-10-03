@@ -286,12 +286,21 @@
   /* 相關文章（文章頁） */
   .related{margin-top:36px;}
   .related h3{font-size:1rem;font-weight:900;color:var(--navy);margin:0 0 12px;}
-  .related ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;}
+  .related ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
   .related a{
-    display:block;padding:12px 16px;border:1px solid var(--line);border-radius:12px;background:var(--bg);
-    color:var(--ink);text-decoration:none;font-weight:700;font-size:.92rem;
+    display:flex;flex-direction:column;height:100%;overflow:hidden;border:1px solid var(--line);border-radius:12px;background:var(--bg);
+    color:var(--ink);text-decoration:none;font-weight:700;font-size:.88rem;line-height:1.6;
+    transition:border-color .2s,transform .2s;
   }
-  .related a:hover{border-color:var(--orange);color:var(--orange);}
+  .related a img{display:block;width:100%;height:auto;aspect-ratio:1200/630;object-fit:cover;}
+  .related a span{padding:10px 14px 14px;}
+  .related a:hover{border-color:var(--orange);color:var(--orange);transform:translateY(-2px);}
+  @media (max-width:640px){
+    .related ul{grid-template-columns:1fr;}
+    .related a{flex-direction:row;align-items:stretch;}
+    .related a img{width:120px;height:auto;min-height:66px;aspect-ratio:auto;object-fit:cover;flex-shrink:0;}
+    .related a span{padding:10px 14px;align-self:center;}
+  }
 
   /* 買賣流程 */
   .process{background:var(--surface-navy);}
