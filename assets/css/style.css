@@ -225,7 +225,10 @@
 
   /* 關於小賈 */
   .about-grid{display:grid;grid-template-columns:1fr;gap:28px;max-width:900px;margin-inline:auto;}
-  @media (min-width:860px){.about-grid{grid-template-columns:1.3fr 1fr;align-items:start;}}
+  @media (min-width:860px){.about-grid{grid-template-columns:300px 1fr;gap:40px;align-items:start;}}
+  .about-photo{margin:0 auto;width:min(100%,300px);}
+  .about-photo img{display:block;width:100%;height:auto;border-radius:20px;border:1px solid var(--line);box-shadow:0 26px 44px -28px rgba(16,30,50,.55);}
+  .about-main{display:flex;flex-direction:column;gap:22px;min-width:0;}
   .about-text p{margin:0 0 14px;line-height:1.9;font-size:.98rem;color:var(--ink);}
   .about-text .about-exp{font-weight:800;color:var(--navy);}
   .about-text .about-exp b{color:var(--orange);font-size:1.3em;font-family:"IBM Plex Mono",monospace;}
@@ -320,7 +323,13 @@
   .card p{margin:0;font-size:.92rem;line-height:1.75;color:var(--ink-soft);}
 
   /* 戰績 */
-  .record-plaques{display:grid;grid-template-columns:1fr;gap:18px;max-width:320px;margin-inline:auto;}
+  .record-plaques{display:flex;flex-wrap:wrap;gap:22px;justify-content:center;align-items:center;max-width:720px;margin-inline:auto;}
+  .record-plaques .plaque{width:min(100%,320px);}
+  .award-photo{margin:0;width:min(100%,230px);}
+  .award-photo img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow);}
+  .award-photo figcaption{margin-top:8px;text-align:center;font-size:.76rem;color:var(--ink-soft);line-height:1.5;}
+  .article-cover{display:block;width:100%;height:auto;aspect-ratio:1200/630;object-fit:cover;border-bottom:1px solid var(--line);}
+  .article-hero{display:block;width:100%;height:auto;border-radius:14px;margin:4px 0 24px;border:1px solid var(--line);}
   .plaque{
     position:relative;background:linear-gradient(160deg,var(--dark),var(--dark-deep));
     color:#fff;border-radius:18px;padding:30px 26px;text-align:center;
