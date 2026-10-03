@@ -436,6 +436,9 @@
   footer{padding-block:32px;background:var(--dark);color:#fff;}
   .footer-row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;font-size:.82rem;color:var(--dark-ink-soft);}
   .footer-row .brand{color:#fff;font-size:.95rem;}
+  .footer-social{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px 16px;}
+  .footer-social a{color:#fff;font-weight:700;text-decoration:none;font-size:.85rem;opacity:.9;}
+  .footer-social a:hover{text-decoration:underline;opacity:1;}
 
   /* sticky bottom action bar (cathome-style quick contact) */
   .quickbar{
