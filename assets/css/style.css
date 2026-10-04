@@ -285,24 +285,30 @@
 
   /* 相關文章（文章頁） */
   .related{margin-top:36px;}
-  .related h3{font-size:1rem;font-weight:900;color:var(--navy);margin:0 0 12px;}
-  .related ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .related h3{font-size:1.1rem;font-weight:900;color:var(--navy);margin:0 0 4px;}
+  .related-sub{font-size:.85rem;color:var(--ink-soft);margin:0 0 14px;}
+  .related ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
   .related a{
     display:flex;flex-direction:column;height:100%;overflow:hidden;border:1px solid var(--line);border-radius:12px;background:var(--bg);
-    color:var(--ink);text-decoration:none;font-weight:700;font-size:.88rem;line-height:1.6;
-    transition:border-color .2s,transform .2s;
+    color:var(--ink);text-decoration:none;transition:border-color .2s,transform .2s,box-shadow .2s;
   }
   .related a img{display:block;width:100%;height:auto;aspect-ratio:1200/630;object-fit:cover;}
-  .related a span{padding:10px 14px 14px;}
-  .related a:hover{border-color:var(--orange);color:var(--orange);transform:translateY(-2px);}
+  .rel-body{display:flex;flex-direction:column;gap:6px;padding:12px 14px 14px;flex:1;}
+  .rel-tag{align-self:flex-start;font-size:.72rem;font-weight:700;color:var(--navy);background:var(--surface-navy);border-radius:999px;padding:2px 10px;}
+  .rel-title{font-weight:700;font-size:.9rem;line-height:1.55;}
+  .rel-more{margin-top:auto;padding-top:4px;font-size:.8rem;font-weight:700;color:var(--orange);}
+  .related a:hover{border-color:var(--orange);transform:translateY(-2px);box-shadow:var(--shadow);}
+  .related a:hover .rel-title{color:var(--orange);}
   @media (max-width:640px){
-    .related ul{grid-template-columns:1fr;}
+    .related ul{grid-template-columns:1fr;gap:10px;}
     .related a{flex-direction:row;align-items:stretch;}
-    .related a img{width:120px;height:auto;min-height:66px;aspect-ratio:auto;object-fit:cover;flex-shrink:0;}
-    .related a span{padding:10px 14px;align-self:center;}
+    .related a img{width:112px;height:auto;min-height:92px;aspect-ratio:auto;object-fit:cover;flex-shrink:0;}
+    .rel-body{padding:10px 12px;gap:4px;justify-content:center;}
+    .rel-title{font-size:.85rem;}
   }
 
-  /* 買賣流程 */
+
+/* 買賣流程 */
   .process{background:var(--surface-navy);}
   .flow-grid{display:grid;grid-template-columns:1fr;gap:18px;max-width:900px;margin-inline:auto;}
   @media (min-width:760px){.flow-grid{grid-template-columns:1fr 1fr;}}
