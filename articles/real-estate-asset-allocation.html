@@ -52,7 +52,7 @@
 <!--BC-END-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=IBM+Plex+Mono:wght@500;600&display=swap">
-<link rel="stylesheet" href="../assets/css/style.css?v=19">
+<link rel="stylesheet" href="../assets/css/style.css?v=20">
 <style>
   .article-page{padding-block:48px 80px;}
   .article-page .wrap{max-width:760px;}
@@ -74,6 +74,7 @@
 </style>
 </head>
 <body>
+<a class="skip" href="#main">跳到主要內容</a>
 <div class="topbar">
   <div class="wrap topbar-row">
     <span class="tb-phone"><svg class="ico" aria-hidden="true"><use href="../assets/img/icons.svg#i-phone"/></svg> 0906-848-168</span>
@@ -104,7 +105,7 @@
 <section class="article-page">
   <div class="wrap">
     <div class="breadcrumb"><a href="../index.html#articles">← 回文章列表</a></div>
-    <article>
+    <article id="main">
       <div class="article-meta">
         <span class="tagline2">資產配置</span>
         <span>房產知識</span>
@@ -128,6 +129,21 @@
           <p>每個人的財務起點、風險承受度都不一樣，這篇談的是通則，實際上你的資產配置比重多少才合理，建議把實際狀況攤開來一起算一次。免費行情評估、貸款試算都可以直接找我聊。</p>
           <p class="article-disclaimer">本文為一般性財務觀念分享，非個人化投資或理財建議，實際配置請依個人財務狀況審慎評估，必要時諮詢專業財務顧問。</p>
       </div>
+      <div class="share">
+        <span class="share-label">分享這篇文章</span>
+        <a class="share-btn" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fjustinchou168.github.io%2Fqingpu-realtor%2Farticles%2Freal-estate-asset-allocation.html" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="../assets/img/icons.svg#i-msg"/></svg>LINE</a>
+        <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fjustinchou168.github.io%2Fqingpu-realtor%2Farticles%2Freal-estate-asset-allocation.html" target="_blank" rel="noopener"><svg class="ico ico-b" aria-hidden="true"><use href="../assets/img/icons.svg#b-facebook"/></svg>Facebook</a>
+        <button class="share-btn" type="button" data-copy="https://justinchou168.github.io/qingpu-realtor/articles/real-estate-asset-allocation.html">複製連結</button>
+      </div>
+      <script>
+      document.querySelectorAll('[data-copy]').forEach(function(b){
+        b.addEventListener('click', function(){
+          var u = b.getAttribute('data-copy'), done = function(){ b.textContent = '已複製'; setTimeout(function(){ b.textContent = '複製連結'; }, 2000); };
+          if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(u).then(done, function(){ window.prompt('複製這個連結', u); }); }
+          else { window.prompt('複製這個連結', u); }
+        });
+      });
+      </script>
       <!--REL-START-->
       <div class="related">
         <h3>你可能也想看</h3>

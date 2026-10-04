@@ -503,3 +503,17 @@
   }
   .quickbar a:last-child{border-right:none;}
   .quickbar .qicon{font-size:1.05rem;}
+  /* 無障礙：跳到主要內容 */
+  .skip{position:absolute;left:12px;top:-60px;z-index:200;background:var(--dark);color:#fff;padding:10px 16px;border-radius:8px;font-weight:700;text-decoration:none;transition:top .15s;}
+  .skip:focus{top:12px;}
+
+  /* 文章分享列 */
+  .share{margin-top:32px;display:flex;flex-wrap:wrap;align-items:center;gap:10px;}
+  .share-label{font-weight:900;font-size:.9rem;color:var(--navy);margin-right:4px;}
+  .share-btn{
+    display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border:1px solid var(--line);border-radius:999px;
+    background:var(--bg);color:var(--ink);font:inherit;font-size:.85rem;font-weight:700;text-decoration:none;cursor:pointer;
+    transition:border-color .2s,color .2s;
+  }
+  .share-btn:hover{border-color:var(--orange);color:var(--orange);}
+  .share-btn .ico{width:16px;height:16px;}
