@@ -161,7 +161,7 @@
     z-index:0;
   }
   .photo-frame img{
-    position:relative;z-index:1;border-radius:50%;aspect-ratio:1/1;object-fit:cover;
+    display:block;width:100%;height:auto;position:relative;z-index:1;border-radius:50%;aspect-ratio:1/1;object-fit:cover;
     border:5px solid var(--dark);box-shadow:0 20px 40px -20px rgba(0,0,0,.6);
   }
   .hero-photo .badge-float{
@@ -285,7 +285,7 @@
 
   /* 相關文章（文章頁） */
   .related{margin-top:36px;}
-  .related h3{font-size:1.1rem;font-weight:900;color:var(--navy);margin:0 0 4px;}
+  .related h2{font-size:1.1rem;font-weight:900;color:var(--navy);margin:0 0 4px;}
   .related-sub{font-size:.85rem;color:var(--ink-soft);margin:0 0 14px;}
   .related ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
   .related a{
