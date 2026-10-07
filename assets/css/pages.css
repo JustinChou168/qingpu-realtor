@@ -1,0 +1,50 @@
+/* 服務頁共用樣式（住宅／工商／資產配置／家族辦公室）：沿用 style.css 與 tools.css 的色彩變數，淺色／深色自動跟隨 */
+.svc-page .wrap{max-width:980px;}
+.svc-page .tool-head{margin-bottom:10px;}
+.svc-page .sec{margin-top:40px;}
+.svc-page .sec>h2{font-size:1.3rem;margin:0 0 6px;color:var(--navy-deep);line-height:1.4;}
+.svc-page .sec>.sub{margin:0 0 16px;color:var(--ink-soft);line-height:1.8;max-width:44em;}
+.svc-page p{line-height:1.9;}
+.scope{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0;padding:0;list-style:none;}
+.scope li{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.9rem;font-weight:700;color:var(--navy);}
+.split{display:grid;gap:14px;grid-template-columns:1fr;}
+@media (min-width:760px){.split.two{grid-template-columns:repeat(2,1fr);}.split.three{grid-template-columns:repeat(3,1fr);}.split.four{grid-template-columns:repeat(2,1fr);}}
+@media (min-width:1000px){.split.four{grid-template-columns:repeat(4,1fr);}}
+.pcard{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 18px 16px;}
+.pcard .tag{display:inline-block;font-size:.76rem;font-weight:700;letter-spacing:.06em;color:var(--orange);margin-bottom:6px;}
+.pcard h3{margin:0 0 8px;font-size:1.05rem;color:var(--navy-deep);line-height:1.5;}
+.pcard p{margin:0 0 8px;font-size:.92rem;line-height:1.8;color:var(--ink);}
+.pcard ul{margin:6px 0 0;padding-left:1.2em;font-size:.9rem;line-height:1.8;color:var(--ink);}
+.pcard li{margin-bottom:4px;}
+.pcard .go{display:inline-block;margin-top:6px;font-size:.88rem;font-weight:700;color:var(--orange);text-decoration:none;}
+.callout{border-left:4px solid var(--orange);background:var(--surface);border-radius:0 12px 12px 0;padding:14px 16px;font-size:.92rem;line-height:1.85;color:var(--ink);}
+.callout strong{color:var(--navy-deep);}
+.callout.warn{border-left-color:#C77700;}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:12px;grid-template-columns:1fr;counter-reset:st;}
+@media (min-width:760px){.steps{grid-template-columns:repeat(4,1fr);}}
+.steps li{counter-increment:st;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;}
+.steps li::before{content:counter(st);display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--dark);color:#fff;font-weight:900;font-size:.85rem;margin-bottom:8px;}
+.steps b{display:block;color:var(--navy-deep);margin-bottom:4px;}
+.steps span{font-size:.88rem;line-height:1.7;color:var(--ink-soft);}
+table.tbl.text{min-width:560px;}
+table.tbl.text th,table.tbl.text td{white-space:normal;text-align:left;vertical-align:top;font-family:inherit;line-height:1.65;}
+table.tbl.text td:first-child{font-weight:700;color:var(--navy-deep);white-space:nowrap;}
+.chart{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 12px 8px;}
+.chart svg{width:100%;height:auto;display:block;}
+.chart .cap{font-size:.8rem;color:var(--ink-soft);padding:2px 6px 6px;line-height:1.7;}
+.faq details{border:1px solid var(--line);border-radius:12px;background:var(--surface);margin-bottom:10px;}
+.faq summary{cursor:pointer;padding:14px 16px;font-weight:700;color:var(--navy-deep);line-height:1.6;min-height:44px;}
+.faq details>div{padding:0 16px 14px;color:var(--ink);line-height:1.85;font-size:.95rem;}
+.badge-now{display:inline-block;font-size:.72rem;font-weight:700;padding:2px 9px;border-radius:999px;margin-right:6px;vertical-align:1px;}
+.badge-now.in{background:#DCF5E5;color:#14532D;}
+.badge-now.wait{background:#FFF1CC;color:#7A4B00;}
+.cross{margin-top:40px;display:grid;gap:12px;grid-template-columns:1fr;}
+@media (min-width:760px){.cross{grid-template-columns:repeat(3,1fr);}}
+.cross a{display:block;text-decoration:none;border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:var(--bg);color:var(--ink);}
+.cross a:hover{border-color:var(--orange);}
+.cross b{display:block;color:var(--navy-deep);margin-bottom:2px;}
+.cross span{font-size:.86rem;color:var(--ink-soft);line-height:1.7;}
+.snap-grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}
+/* style.css 對所有 section 有 64px 上下留白，服務頁內的小節改用自己的間距 */
+.svc-page section.sec{padding-block:0;}
+table.tbl small{font-size:.72rem;color:var(--ink-soft);margin-left:3px;}

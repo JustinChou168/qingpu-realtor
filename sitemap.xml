@@ -1,75 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://justinchou168.github.io/qingpu-realtor/</loc>
+    <loc>https://justinchou168.com/</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://justinchou168.github.io/qingpu-realtor/articles/cathay-station-development.html</loc>
+    <loc>https://justinchou168.com/articles/cathay-station-development.html</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://justinchou168.github.io/qingpu-realtor/articles/taoyuan-art-museum.html</loc>
+    <loc>https://justinchou168.com/articles/taoyuan-art-museum.html</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://justinchou168.github.io/qingpu-realtor/articles/asia-silicon-valley-hub.html</loc>
+    <loc>https://justinchou168.com/articles/asia-silicon-valley-hub.html</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://justinchou168.github.io/qingpu-realtor/articles/aerotropolis-relocation.html</loc>
+    <loc>https://justinchou168.com/articles/aerotropolis-relocation.html</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://justinchou168.github.io/qingpu-realtor/articles/mrt-green-line.html</loc>
+    <loc>https://justinchou168.com/articles/mrt-green-line.html</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://justinchou168.github.io/qingpu-realtor/articles/nycu-hospital.html</loc>
+    <loc>https://justinchou168.com/articles/nycu-hospital.html</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://justinchou168.github.io/qingpu-realtor/articles/nthu-hospital.html</loc>
+    <loc>https://justinchou168.com/articles/nthu-hospital.html</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://justinchou168.github.io/qingpu-realtor/articles/mrt-blue-line.html</loc>
+    <loc>https://justinchou168.com/articles/mrt-blue-line.html</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://justinchou168.github.io/qingpu-realtor/articles/qingpu-housing-price.html</loc>
+    <loc>https://justinchou168.com/articles/qingpu-housing-price.html</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://justinchou168.github.io/qingpu-realtor/articles/real-estate-asset-allocation.html</loc>
+    <loc>https://justinchou168.com/articles/real-estate-asset-allocation.html</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://justinchou168.github.io/qingpu-realtor/articles/real-estate-transaction-tax.html</loc>
+    <loc>https://justinchou168.com/articles/real-estate-transaction-tax.html</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://justinchou168.com/tools/</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://justinchou168.com/tools/calc.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://justinchou168.com/tools/qingan.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://justinchou168.com/tools/grace.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://justinchou168.com/tools/tax.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://justinchou168.com/tools/presale.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://justinchou168.com/tools/check6.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://justinchou168.com/residential/</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://justinchou168.com/commercial/</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://justinchou168.com/asset-allocation/</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://justinchou168.com/family-office/</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://justinchou168.com/case/</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://justinchou168.com/case/zhongli-ruoyin.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 </urlset>
