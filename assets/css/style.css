@@ -523,3 +523,11 @@
   }
   .share-btn:hover{border-color:var(--orange);color:var(--orange);}
   .share-btn .ico{width:16px;height:16px;}
+
+/* 導覽列：八個項目不換行；螢幕偏窄時收緊間距（860–1180px） */
+nav.links a,.navrow .brand{white-space:nowrap;}
+@media (min-width:860px) and (max-width:1180px){
+  nav.links{gap:14px;font-size:.86rem;}
+  .navrow{gap:10px;}
+  .navrow .btn{padding-inline:16px;}
+}
