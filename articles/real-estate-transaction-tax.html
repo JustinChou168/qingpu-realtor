@@ -56,25 +56,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=IBM+Plex+Mono:wght@500;600&display=swap">
 <link rel="stylesheet" href="../assets/css/style.css?v=25">
-<style>
-  .article-page{padding-block:48px 80px;}
-  .article-page .wrap{max-width:760px;}
-  .breadcrumb{font-size:.85rem;color:var(--ink-soft);margin-bottom:18px;}
-  .breadcrumb a{color:var(--orange);text-decoration:none;font-weight:700;}
-  .article-page h1{font-size:clamp(1.5rem,3.6vw,2.1rem);font-weight:900;color:var(--navy);line-height:1.5;margin-bottom:14px;}
-  .article-meta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:.82rem;color:var(--ink-soft);margin-bottom:28px;}
-  .article-meta .tagline2{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px 12px;font-weight:700;color:var(--navy);}
-  .article-body p{line-height:1.9;margin:0 0 16px;color:var(--ink);}
-  .article-body h4{font-size:1.05rem;font-weight:900;color:var(--navy);margin:28px 0 10px;}
-  .article-body ul{margin:0 0 16px;padding-left:1.3em;line-height:1.9;}
-  .article-body li{margin-bottom:6px;}
-  .article-disclaimer{font-size:.8rem;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:16px;margin-top:24px;}
-  .article-cta{margin-top:40px;background:var(--surface-navy);border:1px solid var(--line);border-radius:16px;padding:24px;text-align:center;}
-  .article-cta h2{font-size:1.1rem;color:var(--navy);margin-bottom:8px;}
-  .article-cta p{color:var(--ink-soft);margin-bottom:16px;}
-  .article-cta .hero-ctas{justify-content:center;}
-  .back-list{display:inline-block;margin-top:32px;font-size:.9rem;color:var(--orange);text-decoration:none;font-weight:700;}
-</style>
+<link rel="stylesheet" href="../assets/css/tools.css?v=1">
+<link rel="stylesheet" href="../assets/css/pages.css?v=1">
 </head>
 <body>
 <a class="skip" href="#main">跳到主要內容</a>
@@ -107,20 +90,19 @@
   </div>
 </header>
 
-<section class="article-page">
+<main id="main" class="tool-page svc-page">
   <div class="wrap">
-    <div class="breadcrumb"><a href="../index.html#articles">← 回文章列表</a></div>
-    <article id="main">
-      <div class="article-meta">
-        <span class="tagline2">稅務試算</span>
-        <span>房產知識</span>
-        <span>已發布：統計至 2026 年 9 月</span>
-      </div>
+    <div class="breadcrumb"><a href="../index.html">首頁</a> › <a href="../index.html#articles">房產知識</a> › 房地合一稅、重購退稅重點整理</div>
+    <header class="tool-head">
+      <span class="eyebrow">房產知識｜稅務試算</span>
       <h1>房地合一稅、重購退稅重點整理</h1>
-      <div class="article-body">
-        <p>賣房要繳多少稅，常常是屋主最在意、卻也最容易搞混的問題。這篇整理現行「房地合一稅 2.0」的基本規則，讓你賣房前心裡先有個底。</p>
-          <h4>持有期間，決定基本稅率</h4>
-          <p>房地合一稅以「持有期間」為主要級距，個人交易房地的稅率如下：</p>
+      <p>作者 周家篁　已發布：統計至 2026 年 9 月</p>
+    </header>
+    <div class="callout"><p>賣房要繳多少稅，常常是屋主最在意、卻也最容易搞混的問題。這篇整理現行「房地合一稅 2.0」的基本規則，讓你賣房前心裡先有個底。</p></div>
+
+    <section class="sec" id="sec1">
+      <h2>持有期間，決定基本稅率</h2>
+      <p>房地合一稅以「持有期間」為主要級距，個人交易房地的稅率如下：</p>
           <ul>
             <li>持有 2 年以內：45%</li>
             <li>持有超過 2 年、未逾 5 年：35%</li>
@@ -128,16 +110,22 @@
             <li>持有超過 10 年：15%</li>
           </ul>
           <p>簡單說：持有時間越短，稅率越重；長期持有的房子，稅率會明顯降低。</p>
-          <h4>自住房地，有機會適用優惠稅率</h4>
-          <p>如果賣的是自住房地，符合以下條件，可以適用「400 萬元免稅額＋超過部分 10% 稅率」的優惠，而不是套用上面的持有期間級距：</p>
+    </section>
+
+    <section class="sec" id="sec2">
+      <h2>自住房地，有機會適用優惠稅率</h2>
+      <p>如果賣的是自住房地，符合以下條件，可以適用「400 萬元免稅額＋超過部分 10% 稅率」的優惠，而不是套用上面的持有期間級距：</p>
           <ul>
             <li>本人、配偶或未成年子女在該房屋設有戶籍，並「持有＋居住」連續滿 6 年</li>
             <li>出售前 6 年內，該房屋沒有出租、營業或執行業務使用的紀錄</li>
             <li>本人、配偶及未成年子女在出售前 6 年內，沒有使用過這項優惠（每 6 年只能用一次）</li>
           </ul>
           <p>符合條件的話，課稅所得在 400 萬元以下免稅，超過 400 萬的部分按 10% 稅率課徵，通常比套用持有期間級距划算許多。</p>
-          <h4>換屋族最該搞懂的「重購退稅」</h4>
-          <p>如果你是先賣舊屋、再買新屋（或先買後賣），兩筆交易的「完成移轉登記日」時間差在 2 年以內，就有機會申請重購退稅：</p>
+    </section>
+
+    <section class="sec" id="sec3">
+      <h2>換屋族最該搞懂的「重購退稅」</h2>
+      <p>如果你是先賣舊屋、再買新屋（或先買後賣），兩筆交易的「完成移轉登記日」時間差在 2 年以內，就有機會申請重購退稅：</p>
           <ul>
             <li>出售的舊屋須符合前述自住房地條件（設籍居住、出售前 1 年內無出租營業使用）</li>
             <li>退稅金額＝已繳稅額 ×（重購價額 ÷ 出售價額），比率上限 100%——賣小屋買大屋可全額退還或扣抵；賣大屋買小屋則按比率部分退還</li>
@@ -145,9 +133,10 @@
           </ul>
           <p><strong>重要提醒</strong>：重購後的自住房地，5 年內不能改作其他用途（例如出租、營業）或再次移轉，否則國稅局會追繳原本退還或扣抵的稅款。</p>
           <p>以上是房地合一稅 2.0 目前的現行規定整理，但每個人的持有時間、設籍狀況、過去是否用過優惠都不一樣，實際稅額務必依個案精算，也建議簽約前找會計師或國稅局確認一次。想先抓個大概方向，歡迎跟我聊聊你的物件狀況。</p>
-          <p class="article-disclaimer">本文整理自財政部公開資訊，反映現行法規，惟稅法可能修正，實際申報請以財政部最新公告及個案核定為準，本文不構成正式稅務意見。</p>
-      </div>
-      <div class="share">
+    </section>
+
+    <div class="disclaimer">本文整理自財政部公開資訊，反映現行法規，惟稅法可能修正，實際申報請以財政部最新公告及個案核定為準，本文不構成正式稅務意見。</div>
+    <div class="share">
         <span class="share-label">分享這篇文章</span>
         <a class="share-btn" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fjustinchou168.com%2Farticles%2Freal-estate-transaction-tax.html" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="../assets/img/icons.svg#i-msg"/></svg>LINE</a>
         <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fjustinchou168.com%2Farticles%2Freal-estate-transaction-tax.html" target="_blank" rel="noopener"><svg class="ico ico-b" aria-hidden="true"><use href="../assets/img/icons.svg#b-facebook"/></svg>Facebook</a>
@@ -173,18 +162,17 @@
         </ul>
       </nav>
       <!--REL-END-->
-      <div class="article-cta">
-        <h2>想聊聊你的物件狀況？</h2>
-        <p>買房賣房、免費行情評估、稅務試算，歡迎直接找我聊聊。</p>
+      <div class="tool-cta">
+        <p>想聊聊你的物件狀況？</p>
+        <div class="sm">買房賣房、免費行情評估、稅務試算，歡迎直接找我聊聊。</div>
         <div class="hero-ctas">
           <a class="btn btn-orange" href="https://line.me/ti/p/~show08955" target="_blank" rel="noopener">LINE 免費諮詢</a>
           <a class="btn btn-ghost" href="tel:0906848168">撥打電話</a>
         </div>
       </div>
-      <a class="back-list" href="../index.html#articles">← 回文章列表</a>
-    </article>
+      <div class="cross"><a href="../residential/index.html"><b>住宅買賣</b><span>青埔、大桃園的預售屋換約、成屋、透天</span></a><a href="../commercial/index.html"><b>工商不動產</b><span>廠房、工業用地、辦公、店面、農地</span></a><a href="../asset-allocation/index.html"><b>資產配置</b><span>不動產在整體資產裡該放多少</span></a><a href="../family-office/index.html"><b>家族資產傳承</b><span>跨世代資產盤點與傳承前的準備</span></a></div>
   </div>
-</section>
+</main>
 
 <footer>
   <div class="wrap footer-row">
