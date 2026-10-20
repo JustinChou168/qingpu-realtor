@@ -338,7 +338,7 @@
   .card p{margin:0;font-size:.92rem;line-height:1.75;color:var(--ink-soft);}
 
   /* 戰績 */
-  .record-plaques{display:flex;flex-wrap:wrap;gap:22px;justify-content:center;align-items:center;max-width:720px;margin-inline:auto;}
+  .record-plaques{display:flex;flex-wrap:wrap;gap:22px;justify-content:center;align-items:center;max-width:860px;margin-inline:auto;}
   .record-plaques .plaque{width:min(100%,320px);}
   .award-photo{margin:0;width:min(100%,230px);}
   .award-photo img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow);}
