@@ -363,7 +363,7 @@
     border-radius:18px;padding:28px 26px;box-shadow:var(--shadow);overflow:hidden;
   }
   .case-story .cover{
-    display:block;width:calc(100% + 52px);aspect-ratio:4/3;object-fit:cover;
+    display:block;width:calc(100% + 52px);height:auto;
     margin:-28px -26px 20px;border-radius:18px 18px 0 0;
   }
   .case-story .kicker{
