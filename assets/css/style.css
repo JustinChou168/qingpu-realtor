@@ -536,3 +536,57 @@ nav.links a,.navrow .brand{white-space:nowrap;}
   .navrow{gap:10px;}
   .navrow .btn{padding-inline:16px;}
 }
+
+/* V4: photo-led editorial homepage, scoped so internal pages retain their layout */
+body:has(.v4-discover) .hero {background:linear-gradient(128deg,#10293d 0%,#173953 67%,#0c2437 100%);padding-block:72px 0;}
+body:has(.v4-discover) .hero-inner {gap:clamp(28px,5vw,76px);}
+body:has(.v4-discover) .hero h1 {font-size:clamp(2.05rem,4.2vw,3.9rem);line-height:1.22;letter-spacing:-.035em;max-width:15em;}
+body:has(.v4-discover) .hero .tagline {max-width:43ch;}
+body:has(.v4-discover) .hero .tag-row {margin-top:22px;gap:7px;}
+body:has(.v4-discover) .hero .tag-row li {font-weight:500;background:none;border-color:rgba(255,255,255,.16);padding:6px 10px;}
+body:has(.v4-discover) .hero .tag-row li::before {display:none;}
+body:has(.v4-discover) .hero-photo {width:min(100%,420px);align-self:end;}
+body:has(.v4-discover) .photo-frame {width:min(100%,410px);overflow:hidden;border-radius:6px 6px 0 0;}
+body:has(.v4-discover) .photo-frame::before {display:none;}
+body:has(.v4-discover) .photo-frame img {border:0;border-radius:0;aspect-ratio:4/4.5;object-fit:cover;object-position:center 25%;box-shadow:none;}
+body:has(.v4-discover) .hero-photo .badge-float {right:12px;bottom:15px;border-radius:4px;background:#e8f0f4;color:#15354d;box-shadow:none;}
+body:has(.v4-discover) .hero-stats {margin-top:0;}
+.v4-discover {padding:88px 0 84px;background:#f7f8f7;color:#172c3a;}
+.v4-discover .wrap {max-width:1200px;}
+.v4-discover-head {display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.75fr);gap:44px;align-items:end;margin-bottom:30px;}
+.v4-discover-head .eyebrow {color:#627e86;font-size:.75rem;font-weight:800;letter-spacing:.18em;}
+.v4-discover-head h2 {font-size:clamp(1.7rem,3.4vw,2.85rem);line-height:1.3;letter-spacing:-.035em;margin:12px 0 0;color:#142f40;}
+.v4-discover-head p {color:#5c6e77;line-height:1.95;max-width:42ch;margin:0 0 5px;}
+.v4-editorial-grid {display:grid;grid-template-columns:1.18fr 1fr;grid-template-rows:repeat(2,minmax(215px,1fr));gap:14px;}
+.v4-feature {display:block;position:relative;min-height:230px;overflow:hidden;background:#1b3544;text-decoration:none;color:#fff;border-radius:4px;}
+.v4-feature-main {grid-row:1 / span 2;}
+.v4-feature::after {content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,26,35,.03) 30%,rgba(8,26,39,.84) 100%);pointer-events:none;}
+.v4-feature img {width:100%;height:100%;display:block;position:absolute;inset:0;object-fit:cover;transition:transform .45s ease;}
+.v4-feature:hover img {transform:scale(1.04);}
+.v4-feature-text {position:absolute;z-index:1;left:clamp(22px,3vw,36px);right:22px;bottom:23px;}
+.v4-feature-text>span {font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.12em;color:#c5dae2;}
+.v4-feature-text h3 {margin:8px 0;font-size:clamp(1.1rem,2vw,1.65rem);color:#fff;line-height:1.35;}
+.v4-feature-text p {font-size:.87rem;color:#e0e8ec;margin:0;}
+.v4-feature-text p span {margin-left:6px;}
+.v4-discover-note {margin:12px 0 0;color:#63727a;font-size:.76rem;}
+body:has(.v4-discover) .services .svc {border-radius:5px;box-shadow:none;}
+body:has(.v4-discover) .grid4 .card {border-radius:5px;box-shadow:none;}
+@media(max-width:859px){
+ body:has(.v4-discover) .hero {padding-top:40px;}
+ body:has(.v4-discover) .hero-inner {flex-direction:column-reverse;gap:20px;text-align:left;align-items:stretch;}
+ body:has(.v4-discover) .hero-photo {width: min(80%,300px);align-self:center;}
+ body:has(.v4-discover) .hero .tag-row,body:has(.v4-discover) .hero-ctas {justify-content:flex-start;}
+ .v4-discover {padding:52px 0;}
+ .v4-discover-head {grid-template-columns:1fr;gap:13px;}
+ .v4-editorial-grid {grid-template-columns:1fr 1fr;grid-template-rows:auto;}
+ .v4-feature-main {grid-column:1 / -1;grid-row:auto;min-height:300px;}
+ .v4-feature:not(.v4-feature-main) {min-height:215px;}
+}
+@media(max-width:540px){
+ .v4-editorial-grid {grid-template-columns:1fr;gap:12px;}
+ .v4-feature-main,.v4-feature:not(.v4-feature-main) {grid-column:auto;min-height:240px;}
+ body:has(.v4-discover) .hero h1 {font-size:clamp(1.95rem,8vw,2.6rem);}
+ body:has(.v4-discover) .hero-ctas .btn {white-space:normal;text-align:center;}
+ .v4-discover-head h2 br {display:none;}
+}
+@media(prefers-reduced-motion:reduce){.v4-feature img{transition:none;}}
