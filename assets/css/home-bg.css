@@ -1,0 +1,35 @@
+/* 首頁背景圖片（只在 index.html 載入）。照片皆為青埔／桃園高鐵站實景，來源與授權見頁尾「圖片來源」。 */
+:root{--ov:247,251,255;--ov2:219,237,255}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ov:12,20,32;--ov2:20,31,46}}
+:root[data-theme="dark"]{--ov:12,20,32;--ov2:20,31,46}
+
+.hero,.area,#about,#why,.record,.booking{position:relative}
+.hero{overflow:hidden}
+.hero>.wrap,.area>.wrap,#about>.wrap,#why>.wrap,.record>.wrap,.booking>.wrap{position:relative;z-index:2}
+
+/* 1. 首頁最上方：右半邊青埔天際線，往左漸層融入深藍底（白字照常清楚） */
+.hero::before{content:"";position:absolute;right:0;top:0;bottom:0;width:52%;z-index:0;
+  background:url(../img/bg/qingpu-skyline.jpg) center/cover no-repeat;opacity:.42;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 58%);mask-image:linear-gradient(90deg,transparent,#000 58%)}
+@media (max-width:859px){.hero::before{width:100%;opacity:.2;background-image:url(../img/bg/qingpu-skyline-m.jpg)}}
+
+/* 2. 關於、為什麼：非常淡的天際線，只營造氛圍 */
+#about{background:linear-gradient(rgba(var(--ov),.965),rgba(var(--ov),.95)),url(../img/bg/qingpu-skyline.jpg) center/cover no-repeat}
+#why{background:linear-gradient(rgba(var(--ov),.96),rgba(var(--ov),.96)),url(../img/bg/qingpu-hsr-skyline.jpg) center/cover no-repeat}
+
+/* 3. 服務區域：高鐵站旁天際線 */
+.area{background:linear-gradient(rgba(var(--ov2),.9),rgba(var(--ov2),.95)),url(../img/bg/qingpu-hsr-skyline.jpg) center/cover no-repeat}
+
+/* 4. 戰績：淺色遮罩 + 高鐵站實景；預約：淺色遮罩 + 高鐵站實景（兩者原本就是淺色區塊，文字是深色） */
+.record{background:linear-gradient(rgba(var(--ov),.94),rgba(var(--ov),.95)),url(../img/bg/qingpu-hsr-station.jpg) center/cover no-repeat}
+.booking{background:linear-gradient(rgba(var(--ov2),.9),rgba(var(--ov2),.95)),url(../img/bg/qingpu-hsr-station.jpg) center/cover no-repeat}
+
+/* 手機：改用小一點的圖，省流量 */
+@media (max-width:700px){
+  #about{background-image:linear-gradient(rgba(var(--ov),.965),rgba(var(--ov),.95)),url(../img/bg/qingpu-skyline-m.jpg)}
+  #why,.area{background-image:linear-gradient(rgba(var(--ov),.96),rgba(var(--ov),.96)),url(../img/bg/qingpu-hsr-skyline-m.jpg)}
+  .area{background-image:linear-gradient(rgba(var(--ov2),.9),rgba(var(--ov2),.95)),url(../img/bg/qingpu-hsr-skyline-m.jpg)}
+  .record{background-image:linear-gradient(rgba(var(--ov),.94),rgba(var(--ov),.95)),url(../img/bg/qingpu-hsr-station-m.jpg)}
+  .booking{background-image:linear-gradient(rgba(var(--ov2),.9),rgba(var(--ov2),.95)),url(../img/bg/qingpu-hsr-station-m.jpg)}
+}
+@media (prefers-reduced-data:reduce){.hero::before{display:none}}
