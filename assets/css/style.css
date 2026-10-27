@@ -381,7 +381,7 @@
   /* 兩個成交故事並排：桌機左右各一，手機堆疊；兩張圖統一比例，卡片等高 */
   .case-stories{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;margin:28px auto 0;max-width:640px;}
   .case-stories .case-story{margin:0;max-width:none;min-width:0;display:flex;flex-direction:column;}
-  .case-stories .case-story .cover{max-width:none;flex:none;aspect-ratio:4/3;object-fit:cover;object-position:center 30%;}
+  .case-stories .case-story .cover{max-width:none;flex:none;aspect-ratio:auto;height:auto;object-fit:contain;}
   .case-stories .case-story .kicker{align-self:flex-start;}
   @media (min-width:860px){
     .case-stories{grid-template-columns:repeat(2,minmax(0,1fr));max-width:1040px;gap:26px;}
@@ -404,7 +404,6 @@
   .award-photo{width:min(100%,150px);}
   .award-photo figcaption{font-size:.7rem;}
   @media (max-width:600px){.award-photo{width:calc(50% - 8px);}}
-  .case-stories .case-story .cover{aspect-ratio:16/10;}
   .case-stories{margin-top:22px;}
 
   /* 區塊中段行動按鈕 */
