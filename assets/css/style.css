@@ -387,6 +387,29 @@
     .case-stories{grid-template-columns:repeat(2,minmax(0,1fr));max-width:1040px;gap:26px;}
   }
 
+  /* 文章狀態色標：興建中綠、招商中藍、送審/審查中琥珀、爭議/生變紅、知識類紫 */
+  .st-build{--st:#1f9d55}.st-invest{--st:#1a73e8}.st-review{--st:#d98a00}.st-risk{--st:#d64545}.st-know{--st:#7a5af8}
+  .article .tagline2[class*="st-"]{
+    background:color-mix(in srgb,var(--st) 14%,var(--bg));
+    color:color-mix(in srgb,var(--st) 78%,var(--ink));
+    border:1px solid color-mix(in srgb,var(--st) 38%,transparent);
+    display:inline-flex;align-items:center;gap:6px;
+  }
+  .article .tagline2[class*="st-"]::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--st);}
+
+  /* 戰績區縮小：獎牌與獎座照片變小、故事封面改寬幅，頁面前段不再過長 */
+  .record-plaques{gap:16px;}
+  .record-plaques .plaque{width:min(100%,250px);padding:22px 20px;}
+  .record-plaques .plaque .title{font-size:1.3rem;margin-top:6px;}
+  .award-photo{width:min(100%,150px);}
+  .award-photo figcaption{font-size:.7rem;}
+  @media (max-width:600px){.award-photo{width:calc(50% - 8px);}}
+  .case-stories .case-story .cover{aspect-ratio:16/10;}
+  .case-stories{margin-top:22px;}
+
+  /* 區塊中段行動按鈕 */
+  .section-cta{display:flex;justify-content:center;margin:30px 0 0;}
+
   .record-note{text-align:center;color:var(--ink-soft);max-width:56ch;margin:26px auto 0;line-height:1.8;font-size:.94rem;}
 
   /* 服務項目：用 flex 排版，最後一排不滿時置中，不會留空格 */
