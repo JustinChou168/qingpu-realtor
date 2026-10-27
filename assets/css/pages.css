@@ -48,3 +48,9 @@ table.tbl.text td:first-child{font-weight:700;color:var(--navy-deep);white-space
 /* style.css 對所有 section 有 64px 上下留白，服務頁內的小節改用自己的間距 */
 .svc-page section.sec{padding-block:0;}
 table.tbl small{font-size:.72rem;color:var(--ink-soft);margin-left:3px;}
+
+/* 文章內文插圖：開放授權照片，圖說標示作者與授權 */
+.article-figure{margin:4px 0 24px;}
+.article-figure img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);}
+.article-figure figcaption{margin-top:8px;font-size:.78rem;line-height:1.6;color:var(--ink-soft);}
+.article-figure figcaption a{color:inherit;text-decoration:underline;}
