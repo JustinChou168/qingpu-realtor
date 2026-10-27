@@ -54,3 +54,8 @@ table.tbl small{font-size:.72rem;color:var(--ink-soft);margin-left:3px;}
 .article-figure img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--line);}
 .article-figure figcaption{margin-top:8px;font-size:.78rem;line-height:1.6;color:var(--ink-soft);}
 .article-figure figcaption a{color:inherit;text-decoration:underline;}
+
+/* 文章頁狀態色標 */
+.st{--c:var(--st);display:inline-flex;align-items:center;gap:5px;padding:2px 10px;border-radius:999px;font-size:.78rem;font-weight:700;vertical-align:middle;background:color-mix(in srgb,var(--st) 14%,var(--bg));color:color-mix(in srgb,var(--st) 78%,var(--ink));border:1px solid color-mix(in srgb,var(--st) 38%,transparent);}
+.st::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--st);}
+.st-build{--st:#1f9d55}.st-invest{--st:#1a73e8}.st-review{--st:#d98a00}.st-risk{--st:#d64545}.st-know{--st:#7a5af8}
