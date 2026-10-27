@@ -378,6 +378,15 @@
     font-size:.88rem;font-style:italic;color:var(--ink-soft);
   }
 
+  /* 兩個成交故事並排：桌機左右各一，手機堆疊；兩張圖統一比例，卡片等高 */
+  .case-stories{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;margin:28px auto 0;max-width:640px;}
+  .case-stories .case-story{margin:0;max-width:none;min-width:0;display:flex;flex-direction:column;}
+  .case-stories .case-story .cover{max-width:none;flex:none;aspect-ratio:4/3;object-fit:cover;object-position:center 30%;}
+  .case-stories .case-story .kicker{align-self:flex-start;}
+  @media (min-width:860px){
+    .case-stories{grid-template-columns:repeat(2,minmax(0,1fr));max-width:1040px;gap:26px;}
+  }
+
   .record-note{text-align:center;color:var(--ink-soft);max-width:56ch;margin:26px auto 0;line-height:1.8;font-size:.94rem;}
 
   /* 服務項目：用 flex 排版，最後一排不滿時置中，不會留空格 */
