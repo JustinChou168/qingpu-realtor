@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>幫我留個 Google 評價｜青埔房仲小賈</title>
+<style>
+:root{--navy:#14283a;--gold:#b8893a;--bg:#f6f3ec;--card:#fff;--ink:#22313f;--mute:#6b7a86;--line:#e4ddcf;--sel:#14283a;--selbg:#eef2f6}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 "Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif}
+main{max-width:560px;margin:0 auto;padding:28px 18px 40px}
+.brand{font-size:13px;letter-spacing:.14em;color:var(--gold);font-weight:700}
+h1{font-size:26px;line-height:1.35;color:var(--navy);margin:6px 0 10px;text-wrap:balance}
+.lead{margin:0 0 6px;color:var(--mute)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-top:18px}
+.card h2{font-size:16px;margin:0 0 2px;color:var(--navy)}
+.card .hint{margin:0 0 10px;font-size:13px;color:var(--mute)}
+.step{display:inline-block;width:1.6em;height:1.6em;line-height:1.6em;text-align:center;border-radius:50%;background:var(--navy);color:#fff;font-size:13px;margin-right:6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;font-size:15px;line-height:1.4;padding:9px 14px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;touch-action:manipulation}
+.chip[aria-pressed="true"]{border-color:var(--sel);background:var(--selbg);color:var(--navy);font-weight:700}
+.chip[aria-pressed="true"]::before{content:"✓ "}
+input.own{width:100%;font:inherit;font-size:15px;padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;color:var(--ink);background:#fff}
+textarea{width:100%;min-height:190px;font:inherit;font-size:16px;line-height:1.7;padding:12px 14px;border:1.5px solid var(--navy);border-radius:10px;color:var(--ink);background:#fff;resize:vertical}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.btn{font:inherit;font-size:15px;padding:11px 16px;border-radius:10px;cursor:pointer;border:1.5px solid var(--navy);background:#fff;color:var(--navy);touch-action:manipulation}
+.btn.main{background:var(--navy);color:#fff;font-weight:700;flex:1 1 150px}
+a.cta{display:block;text-align:center;text-decoration:none;background:var(--gold);color:#fff;font-weight:700;font-size:18px;padding:15px 18px;border-radius:12px;margin-top:12px}
+.msg{min-height:1.6em;margin:8px 0 0;font-size:14px;color:var(--navy)}
+.warn{font-size:13px;color:var(--mute);margin:10px 0 0}
+.stale{display:none;margin-top:8px;font-size:13px;color:#8a4b12}
+.qr{display:flex;gap:16px;align-items:center}
+.qr svg{width:120px;height:120px;flex:none;border:1px solid var(--line);border-radius:8px;background:#fff}
+.qr p{margin:0;font-size:14px;color:var(--mute)}
+.foot{margin-top:26px;padding-top:14px;border-top:1px solid var(--line);font-size:12px;line-height:1.7;color:var(--mute)}
+@media (max-width:380px){.qr{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+<main>
+  <div class="brand">青埔房仲小賈　周家篁</div>
+  <h1>謝謝您的信任，<br>方便的話幫我留個評價</h1>
+  <p class="lead">點選幾個選項，就會幫您整理成一段文字，改成您想說的話，複製後貼到 Google 即可。</p>
+
+  <section class="card">
+    <h2><span class="step">1</span>這次是為了什麼事找我？</h2>
+    <div class="chips" id="g-service" role="group" aria-label="服務類型">
+      <button class="chip" type="button" data-v="sell">賣屋</button>
+      <button class="chip" type="button" data-v="buy">買屋</button>
+      <button class="chip" type="button" data-v="rent">租屋</button>
+      <button class="chip" type="button" data-v="land">土地</button>
+      <button class="chip" type="button" data-v="other">其他</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2><span class="step">2</span>哪些地方讓您有感覺？</h2>
+    <p class="hint">可以複選，只選真的符合您感受的</p>
+    <div class="chips" id="g-hi" role="group" aria-label="印象">
+      <button class="chip" type="button" data-v="fast">回覆很快</button>
+      <button class="chip" type="button" data-v="clear">說明清楚易懂</button>
+      <button class="chip" type="button" data-v="analysis">價格分析有依據</button>
+      <button class="chip" type="button" data-v="patient">親切有耐心</button>
+      <button class="chip" type="button" data-v="nopressure">不會催促施壓</button>
+      <button class="chip" type="button" data-v="marketing">行銷曝光用心</button>
+      <button class="chip" type="button" data-v="fullservice">全程協助、省心</button>
+      <button class="chip" type="button" data-v="detail">細節都顧到</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2><span class="step">3</span>整體感覺如何？</h2>
+    <div class="chips" id="g-out" role="group" aria-label="整體感受">
+      <button class="chip" type="button" data-v="done">順利完成了</button>
+      <button class="chip" type="button" data-v="going">還在進行，但很放心</button>
+      <button class="chip" type="button" data-v="ok">整體滿意</button>
+      <button class="chip" type="button" data-v="improve">有地方可以更好</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2><span class="step">4</span>想補一句自己的話嗎？（選填）</h2>
+    <p class="hint">例如印象最深的一件小事，這樣最真實，也最有幫助</p>
+    <input class="own" id="own" type="text" maxlength="120" placeholder="寫下您自己的一句話">
+  </section>
+
+  <section class="card">
+    <h2><span class="step">5</span>您的評論（可直接修改）</h2>
+    <textarea id="draft" aria-label="評論內容" placeholder="先在上面點選幾個選項，這裡就會出現文字。"></textarea>
+    <div class="stale" id="stale">您的選項改了，但這段文字有被您修改過，所以沒有自動更新。 <button class="btn" type="button" id="rewrite" style="padding:5px 10px;font-size:13px">用新選項重寫（會覆蓋修改）</button></div>
+    <div class="row">
+      <button class="btn" type="button" id="reroll">換個說法</button>
+      <button class="btn main" type="button" id="copy">複製評論</button>
+    </div>
+    <p class="msg" id="msg" role="status"></p>
+    <a class="cta" id="go" href="https://search.google.com/local/writereview?placeid=ChIJCwweeayFGqkRXmquLKPCEa0" target="_blank" rel="noopener">到 Google 貼上評論</a>
+    <p class="warn">這是依您的選擇整理的草稿，請依照您的真實經驗修改後再貼上；星等請您自己在 Google 上選。評價完全由您決定，與任何優惠或服務都無關。</p>
+  </section>
+
+  <section class="card qr">
+    <svg viewBox="0 0 41 41" role="img" aria-label="Google 評論 QR 碼" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg" class="segno"><path class="qrline" stroke="#14283a" d="M2 2.5h7m2 0h1m3 0h1m1 0h1m2 0h1m1 0h1m1 0h1m3 0h1m1 0h1m1 0h7m-37 1h1m5 0h1m2 0h2m1 0h7m1 0h3m2 0h4m1 0h1m5 0h1m-37 1h1m1 0h3m1 0h1m1 0h1m1 0h1m2 0h4m1 0h2m1 0h4m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h4m1 0h1m2 0h2m2 0h1m2 0h5m2 0h1m1 0h3m1 0h1m-37 1h1m1 0h3m1 0h1m1 0h4m6 0h4m1 0h1m4 0h1m1 0h1m1 0h3m1 0h1m-37 1h1m5 0h1m1 0h4m3 0h1m4 0h1m4 0h3m2 0h1m5 0h1m-37 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-29 1h2m1 0h2m2 0h1m3 0h3m1 0h1m2 0h1m1 0h1m-29 1h1m1 0h5m2 0h2m1 0h2m1 0h3m3 0h6m1 0h1m1 0h5m-35 1h1m1 0h2m6 0h1m2 0h1m1 0h1m1 0h2m1 0h1m1 0h2m1 0h1m2 0h2m3 0h1m1 0h1m-36 1h4m2 0h3m3 0h2m1 0h2m1 0h1m3 0h1m2 0h4m1 0h1m2 0h1m1 0h2m-35 1h1m2 0h1m1 0h1m1 0h2m1 0h1m2 0h1m5 0h2m1 0h1m1 0h1m2 0h1m1 0h1m4 0h1m-36 1h1m1 0h1m1 0h4m1 0h2m3 0h1m1 0h1m2 0h1m1 0h1m1 0h4m1 0h8m-37 1h1m3 0h2m7 0h1m2 0h1m2 0h2m2 0h1m7 0h1m3 0h1m-36 1h1m1 0h2m1 0h4m2 0h1m1 0h1m1 0h2m1 0h1m1 0h2m4 0h2m1 0h1m1 0h3m1 0h2m-35 1h1m1 0h2m2 0h2m1 0h1m3 0h1m3 0h3m1 0h2m1 0h2m1 0h4m2 0h1m-31 1h2m3 0h5m2 0h4m1 0h1m2 0h2m2 0h2m1 0h1m1 0h2m-36 1h1m1 0h2m4 0h2m3 0h4m3 0h1m2 0h1m1 0h1m1 0h2m1 0h2m2 0h2m-36 1h1m4 0h3m1 0h3m8 0h3m2 0h3m1 0h3m1 0h1m1 0h2m-33 1h2m3 0h1m1 0h2m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1m2 0h1m2 0h2m1 0h1m3 0h1m-37 1h3m3 0h3m1 0h5m2 0h1m1 0h1m2 0h1m1 0h3m2 0h2m1 0h3m-35 1h1m1 0h3m3 0h3m2 0h2m1 0h1m1 0h2m3 0h1m4 0h1m4 0h1m1 0h1m-35 1h9m3 0h1m1 0h1m2 0h1m2 0h2m1 0h1m1 0h3m1 0h4m2 0h1m-37 1h1m1 0h1m1 0h2m3 0h2m3 0h1m1 0h1m1 0h1m1 0h4m2 0h1m2 0h1m1 0h2m2 0h1m-36 1h1m1 0h3m1 0h2m1 0h1m3 0h1m1 0h2m1 0h2m2 0h6m1 0h2m1 0h1m1 0h3m-37 1h1m2 0h2m4 0h2m1 0h1m1 0h2m2 0h1m1 0h1m1 0h1m4 0h2m2 0h1m1 0h1m-34 1h1m1 0h1m2 0h2m5 0h1m2 0h2m5 0h1m1 0h5m1 0h2m3 0h2m-37 1h1m3 0h1m2 0h1m1 0h4m1 0h2m4 0h4m2 0h2m1 0h3m3 0h1m-36 1h1m1 0h3m1 0h4m2 0h1m2 0h3m1 0h1m2 0h1m1 0h3m1 0h8m-28 1h5m1 0h1m1 0h1m2 0h3m1 0h2m2 0h2m3 0h2m1 0h1m-36 1h7m5 0h2m1 0h2m1 0h1m1 0h2m6 0h1m1 0h1m1 0h1m1 0h3m-37 1h1m5 0h1m1 0h9m1 0h1m2 0h2m3 0h1m1 0h1m3 0h2m1 0h2m-37 1h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h2m2 0h1m3 0h1m1 0h9m1 0h3m-37 1h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h4m1 0h1m1 0h3m2 0h6m1 0h2m2 0h1m-37 1h1m1 0h3m1 0h1m1 0h7m2 0h2m1 0h1m5 0h2m1 0h1m4 0h3m-37 1h1m5 0h1m5 0h3m1 0h1m1 0h1m1 0h3m1 0h1m2 0h1m4 0h1m3 0h1m-37 1h7m1 0h1m1 0h2m1 0h2m2 0h1m4 0h5m3 0h1m1 0h5"/></svg>
+    <div>
+      <h2 style="margin:0 0 4px">在電腦上看到這頁？</h2>
+      <p>用手機相機掃這個 QR 碼，就能直接在手機上開啟。</p>
+    </div>
+  </section>
+
+  <div class="foot">
+    營業員：(109)登字第380553號 周家篁｜不動產經紀人：(102)桃市經字第001336號 洪寶玉<br>
+    有巢氏房屋-青埔A18高鐵加盟店｜經紀業：賀成交不動產股份有限公司
+  </div>
+</main>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var S={service:'',hi:[],out:'',seed:Math.floor(Math.random()*1e9),dirty:false,auto:''};
+
+  // 每個選項有幾種說法；用亂數種子挑，所以按「換個說法」每次都不一樣，每位客戶拿到的文字也不會一模一樣
+  var INTRO={
+    sell:['這次請家篁幫忙賣屋','賣房子的事交給家篁處理','委託家篁協助出售房子'],
+    buy:['這次請家篁協助買房','買房的過程有家篁陪著看','找家篁幫忙看房、買房'],
+    rent:['這次請家篁協助租屋的事','租屋的部分是請家篁幫忙','找家篁處理租賃的事'],
+    land:['土地的事找家篁協助','這次請家篁處理土地的買賣與租賃','土地相關的問題請教家篁'],
+    other:['這次請家篁協助不動產相關的事','不動產的事情找家篁幫忙','有不動產的問題請教了家篁']
+  };
+  var HI={
+    fast:['訊息回覆得很快','有問題都能很快得到回應','聯絡起來很順，不用等很久'],
+    clear:['每個步驟都說明得很清楚，聽得懂','把流程與注意事項講得很白話','不懂的地方都會解釋到我明白'],
+    analysis:['價格建議是拿實際成交資料來分析，說得出依據','不是憑感覺喊價，而是有資料可以參考','會把成交行情攤開來看，判斷有憑有據'],
+    patient:['態度親切又有耐心','問再多問題也都耐心回答','相處起來很自在，也很有耐心'],
+    nopressure:['不會一直催促，讓我有空間自己考慮','沒有給我壓力，決定權在我','不強迫推銷，讓我可以安心做決定'],
+    marketing:['物件的拍攝與曝光都看得出用心','在行銷曝光上花了不少心思','宣傳的方式有想過，不是隨便放著'],
+    fullservice:['從頭到尾都有協助，省了很多心力','流程和手續都有人幫忙盯著','整個過程有人全程協助，很省心'],
+    detail:['很多細節都有顧到','小地方也不馬虎','該注意的細節都有提醒到']
+  };
+  var OUT={
+    done:['整件事情最後順利完成了','最後也順利完成','事情順利告一段落，過程讓人放心'],
+    going:['目前事情還在進行中，但已經讓我很放心','雖然還在進行中，但目前的過程讓我很安心','事情還沒完全結束，不過到現在都讓人放心'],
+    ok:['整體來說我很滿意','整體的服務經驗讓我滿意','整體感受是滿意的'],
+    improve:['整體是不錯的經驗，不過也有一些地方我覺得還可以更好','大致上是好的經驗，但有些部分還有進步的空間','整體感受不差，也有幾點希望可以再改進']
+  };
+  var END={
+    done:['有需要的朋友可以找他聊聊','如果身邊有人有需求，我會推薦','推薦給有不動產需求的人'],
+    going:['想找人討論不動產的朋友，可以聊聊看','如果您也有類似需求，可以參考看看'],
+    ok:['有需要的話可以參考看看','推薦給有不動產需求的朋友'],
+    improve:[]
+  };
+
+  function rng(seed){var a=seed>>>0;return function(){a+=0x6D2B79F5;var t=a;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return((t^t>>>14)>>>0)/4294967296}}
+  function pick(r,arr){return arr[Math.floor(r()*arr.length)]}
+
+  function build(){
+    if(!S.service&&!S.hi.length&&!S.out&&!$('own').value.trim())return '';
+    var r=rng(S.seed), parts=[];
+    var head=S.service?pick(r,INTRO[S.service]):'';
+    var hs=S.hi.slice();
+    for(var i=hs.length-1;i>0;i--){var j=Math.floor(r()*(i+1));var t=hs[i];hs[i]=hs[j];hs[j]=t}   // 順序也打散
+    var cl=hs.map(function(k){return pick(r,HI[k])});
+    var s=[];
+    if(head&&cl.length){s.push(head+'，'+cl[0]+'。')}
+    else if(head){s.push(head+'。')}
+    else if(cl.length){s.push(cl[0]+'。')}
+    if(cl.length>1){s.push(cl.slice(1).join('，')+'。')}
+    if(S.out){
+      var o=pick(r,OUT[S.out]);
+      var e=END[S.out].length?pick(r,END[S.out]):'';
+      s.push(o+(e?'，'+e:'')+'。');
+    }
+    var own=$('own').value.trim();
+    if(own){s.push(own.replace(/[。.!！]+$/,'')+'。')}
+    return s.join('');
+  }
+
+  function refresh(force){
+    $('own').placeholder=S.out==='improve'?'請寫下哪裡可以更好，這對我很有幫助':'寫下您自己的一句話';
+    var cur=$('draft').value, next=build();
+    if(S.dirty&&!force){$('stale').style.display=next!==S.auto?'block':'none';return}
+    S.auto=next;$('draft').value=next;S.dirty=false;$('stale').style.display='none';$('msg').textContent='';
+  }
+
+  function single(groupId,key){
+    var g=$(groupId);
+    g.addEventListener('click',function(e){
+      var b=e.target.closest('.chip');if(!b)return;
+      var on=b.getAttribute('aria-pressed')==='true';
+      [].forEach.call(g.querySelectorAll('.chip'),function(x){x.setAttribute('aria-pressed','false')});
+      S[key]=on?'':b.dataset.v;if(!on)b.setAttribute('aria-pressed','true');
+      refresh();
+    });
+  }
+  single('g-service','service');single('g-out','out');
+  $('g-hi').addEventListener('click',function(e){
+    var b=e.target.closest('.chip');if(!b)return;
+    var on=b.getAttribute('aria-pressed')==='true';
+    b.setAttribute('aria-pressed',on?'false':'true');
+    S.hi=[].map.call($('g-hi').querySelectorAll('.chip[aria-pressed="true"]'),function(x){return x.dataset.v});
+    refresh();
+  });
+  $('own').addEventListener('input',function(){refresh()});
+  $('draft').addEventListener('input',function(){S.dirty=($('draft').value!==S.auto);if(!S.dirty)$('stale').style.display='none'});
+  $('reroll').addEventListener('click',function(){S.seed=Math.floor(Math.random()*1e9);refresh(true)});
+  $('rewrite').addEventListener('click',function(){refresh(true)});
+
+  function done(){$('msg').textContent='已複製。接著點下面的按鈕，到 Google 貼上，並選您的星等。'}
+  function fail(){$('msg').textContent='自動複製沒成功，請在文字框裡長按、全選後自行複製。'}
+  $('copy').addEventListener('click',function(){
+    var t=$('draft').value.trim();
+    if(!t){$('msg').textContent='請先點選上面的選項，或直接在文字框寫下您的感受。';return}
+    function fallback(){var ta=$('draft');ta.focus();ta.select();try{document.execCommand('copy')?done():fail()}catch(e){fail()}}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,fallback)}else{fallback()}
+  });
+})();
+</script>
+</body>
+</html>
