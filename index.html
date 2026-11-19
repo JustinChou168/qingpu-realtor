@@ -525,6 +525,95 @@
   </div>
 </section>
 
+<section id="listings">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">LISTINGS</span>
+      <h2>精選物件</h2>
+      <p>目前手上的出售委託整理，坪數、格局、價格一次看，更多物件請到精選物件頁。</p>
+    </div>
+    <div id="home-listings-grid" class="grid-articles">
+      <p class="note" style="text-align:center;width:100%;">物件載入中…</p>
+    </div>
+    <p style="text-align:center;margin-top:20px"><a class="btn btn-ghost" href="listings/index.html">查看全部精選物件</a></p>
+  </div>
+</section>
+<script>
+(function(){
+  var SHEET_ID = '1wTT8ipa0M6ZOZLjqbRvZOJrbDuRmf_LKKUhH8KsySwI';
+  var CSV_URL = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?tqx=out:csv&gid=0';
+  var grid = document.getElementById('home-listings-grid');
+  if (!grid) return;
+
+  function parseCSV(text){
+    var rows = [], row = [], field = '', inQuotes = false;
+    for (var i = 0; i < text.length; i++){
+      var c = text[i], next = text[i+1];
+      if (inQuotes){
+        if (c === '"' && next === '"'){ field += '"'; i++; }
+        else if (c === '"'){ inQuotes = false; }
+        else { field += c; }
+      } else {
+        if (c === '"'){ inQuotes = true; }
+        else if (c === ','){ row.push(field); field = ''; }
+        else if (c === '\r'){ /* skip */ }
+        else if (c === '\n'){ row.push(field); rows.push(row); row = []; field = ''; }
+        else { field += c; }
+      }
+    }
+    if (field.length || row.length){ row.push(field); rows.push(row); }
+    return rows;
+  }
+
+  function esc(s){
+    var d = document.createElement('div');
+    d.textContent = s == null ? '' : String(s);
+    return d.innerHTML;
+  }
+
+  function card(item){
+    var cover = item['封面照片網址'] && item['封面照片網址'].trim();
+    var type = (item['類型'] || '').trim();
+    var title = (item['標題'] || '').trim();
+    if (!title) return '';
+    var area = (item['社區/區域'] || '').trim();
+    var ping = (item['坪數'] || '').trim();
+    var layout = (item['格局'] || '').trim();
+    var price = (item['價格(萬)'] || '').trim().replace(/,/g, '');
+    var highlight = (item['亮點簡介'] || '').trim();
+    var isRent = type === '出租';
+    var priceNum = price ? Number(price).toLocaleString('zh-TW') : '洽詢';
+    var priceLine = price ? (priceNum + (isRent ? ' 元／月' : ' 萬')) : priceNum;
+    var specLine = [ping ? (ping + '坪') : '', layout].filter(Boolean).join('｜');
+
+    return '<div class="article" data-cat="listing"><img class="article-cover" src="' + esc(cover || 'assets/img/og-image.jpg') + '" alt="' + esc(title) + '" width="1200" height="630" loading="lazy">'
+      + '<span class="tagline2 st-know">' + esc(type || '物件') + (area ? '｜' + esc(area) : '') + '</span>'
+      + '<h3>' + esc(title) + '</h3>'
+      + '<p>' + esc(specLine) + (highlight ? '｜' + esc(highlight) : '') + '</p>'
+      + '<a class="read-more-btn" href="https://line.me/ti/p/~show08955" target="_blank" rel="noopener">加 LINE 問更多 →</a>'
+      + '<div class="status">' + esc(priceLine) + '</div></div>';
+  }
+
+  fetch(CSV_URL)
+    .then(function(res){ if (!res.ok) throw new Error('fetch failed'); return res.text(); })
+    .then(function(text){
+      var rows = parseCSV(text);
+      if (rows.length < 2){ throw new Error('no data'); }
+      var headers = rows[0];
+      var items = rows.slice(1).map(function(r){
+        var obj = {};
+        headers.forEach(function(h, i){ obj[h] = r[i]; });
+        return obj;
+      }).slice(0, 4);
+      var html = items.map(card).filter(Boolean).join('');
+      grid.innerHTML = html || '<p class="note" style="text-align:center;width:100%;">目前沒有上架中的物件，歡迎直接加 LINE 詢問。</p>';
+    })
+    .catch(function(){
+      grid.innerHTML = '<p class="note" style="text-align:center;width:100%;">物件資料暫時載入不到，請到<a href="listings/index.html">精選物件頁</a>查看，或直接加 LINE 詢問。</p>';
+    });
+})();
+</script>
+
 <!--FAQ-START-->
 <section id="cases">
   <div class="wrap">
