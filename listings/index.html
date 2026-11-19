@@ -183,7 +183,7 @@
     var ping = (item['坪數'] || '').trim();
     var layout = (item['格局'] || '').trim();
     var floor = (item['樓層'] || '').trim();
-    var price = (item['價格(萬)'] || '').trim();
+    var price = (item['價格(萬)'] || '').trim().replace(/,/g, '');
     var highlight = (item['亮點簡介'] || '').trim();
     var isRent = type === '出租';
 
